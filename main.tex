@@ -1,10 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage[export]{adjustbox}
-% \usepackage{anyfontsize}
-% \usepackage{amsfonts, amsmath, amssymb, amsthm}
 \usepackage{amsfonts, amsmath, amssymb}
 \usepackage[english, spanish]{babel}
 \usepackage{bm}
+\usepackage{breqn}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{geometry}
@@ -98,6 +97,7 @@
     unicode = true%
 }
 
+%%%%%%%%%%%%%%%%%%siunitx configuration%%%%%%%%%%%%%%%%%%
 % Configuración del paquete siunitx
 \sisetup{
 	output-decimal-marker = {.}, 
@@ -106,6 +106,11 @@
 	exponent-product = \cross,
     % inter-unit-product = \ensuremath{{}\vdot{}}
 }
+
+% Declaring new units
+\DeclareSIUnit\kilogram{\kilo\gram}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Geometría del documento
 \geometry{
@@ -118,11 +123,9 @@
 }
 
 %%%%%%%%%%%%%%%%%%Nuevos comandos%%%%%%%%%%%%%%%%%%
-\newcommand*{\group}{XXXX}
-\newcommand*{\classname}{Subject}
-\newcommand*{\homeworknumber}{Tarea X}
-\newcommand*{\subject}{Tema}
-\newcommand*{\teacher}{Dr. Name LastName LastName}
+\newcommand*{\group}{8231}
+\newcommand*{\classname}{Relatividad}
+\newcommand*{\homeworknumber}{Tarea 1}
 \newcommand*{\name}{Marcos López Merino}
 
 % unit vector i
@@ -155,7 +158,7 @@
 
 % Portada
 \title{
-    \textbf{\homeworknumber: \subject}\\
+    \textbf{\homeworknumber}\\
     \normalsize\vspace{0.1in}\small{\textbf{Entrega}:~\today}
     \vspace{-1.5in}
 }
@@ -165,7 +168,7 @@
 %%%%%%%%%%%%%%%%%%Header and footer%%%%%%%%%%%%%%%%%%
 \setlength{\headheight}{15.2pt}
 \pagestyle{fancy}
-\lhead{Grupo \group, Sem. 2022-2}
+\lhead{Grupo \group, Sem. 2023-1}
 \chead{\classname}
 \rhead{\name}
 \lfoot{\includegraphics[scale = 0.2, valign = c]{LogoFCUNAMcolor.pdf}}
@@ -184,10 +187,33 @@
     
     
     \begin{exercise}
-        \kant[1]
-        \begin{solution}
-            \kant[1]
-        \end{solution}
+        Durante el curso usaremos unidades naturales, en las que \(c = 1\) y medimos tiempo y distancia en metros. Para que te acostumbres a esto en este problema harás algunas conversiones entre unidades naturales y el SI. Aunque parezca a primera vista un simple ejercicio mecánico, recuerda que \(c = 1\) vino de entender que el espacio y el tiempo son la misma cosas física, así que posiblemente escribir otras cantidades físicas en unidades naturales nos revele más de lo que pensamos.
+
+        \begin{enumerate}[label = \alph*)]
+            \item Transforma las siguientes cantidades del SI a unidades naturales. Expresas tus resultados en términos de kg y m.
+            
+            \begin{enumerate}[label = \arabic*.]
+                \item Energía \(E = \SI{5}{\joule}\) (este es particularmente interesante, aquí hay implícito otro cambio total de paradigma).
+                \item Momento \(p = \SI[per-mode = power]{3e4}{\kilogram \metre \per\second}\) (compara con tu resultado anterior, qué curioso).
+                \item Densidad de masa \(\rho = \SI[per-mode = power]{10}{\kilogram \per \cubic\metre}\)
+            \end{enumerate}
+
+            \item Transforma las siguientes cantidades de unidades naturales al SI.
+            
+            \begin{enumerate}[label = \arabic*.]
+                \item Velocidad \(v = \num{e-2}\) (siempre hablaremos de velocidades entre 0 y 1, así que es importante imaginarse cuál es la magnitud de estas en unidades más humanas).
+                \item Presión \(P = \SI[per-mode = power]{e19}{\kilogram \per \cubic\metre}\)
+                \item Densidad de energía \(U = \SI[per-mode = power]{1}{\kilogram \per \cubic\metre}\) (las mismas unidades que la presión, qué raro).
+            \end{enumerate}
+
+            \item Dos de las ecuaciones de Maxwell relacionan los campos eléctrico y magnético. En el vacío estas son
+            
+            \begin{dmath}
+                \curl{\va*{E}} = -\pdv{\va*{B}}{t} \condition*{\curl{\va*{B}} = \dfrac{1}{c^{2}} \displaystyle\pdv{\va*{E}}{t}}
+            \end{dmath}
+
+            ¿Cómo se ven estas ecuaciones escritas en unidades naturales? ¿Cuál es la relación entre las unidades de \(\va*{E}\) y las de \(\va*{B}\)?
+        \end{enumerate}
     \end{exercise}
 
     \begin{exercise}
