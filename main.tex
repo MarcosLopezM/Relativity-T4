@@ -150,7 +150,9 @@
   }%
 }
 \newcommand*{\e}{\mathrm{e}} % exponential
-% \newcommand{\solution}{\vspace*{4pt} \textbf{Solución}\vspace*{4pt}}
+\newcommand*{\observer}{\mathcal{O}}
+\newcommand*{\primeobserver}{\mathcal{O}^{\prime}}
+
 
 %%%%%%%%%%%%%%%%%%Portada y configuración%%%%%%%%%%%%%%%%%%
 % Configuración de portada
@@ -217,10 +219,15 @@
     \end{exercise}
 
     \begin{exercise}
-        \kant[1]
-        \begin{solution}
-            \kant[1]
-        \end{solution}
+        Considera dos sistemas de referencia inerciales \(\observer\) y \(\primeobserver\), tal que \(\primeobserver\) se mueve con velocidad \(v\) en la dirección positiva del eje \(x\) respecto a \(\observer\) y el origen de ambos sistemas es el mismo evento. En clase pintamos el diagrama de espacio-tiempo desde la perspectiva de \(\observer\) y localizamos en éste los ejes de \(\primeobserver\). En este problema encontrarás los ejes de \(\observer\) en el diagrama de \(\primeobserver\).
+
+        \begin{enumerate}[label = \alph*)]
+            \item Pinta la línea de mundo de \(\observer\) en el diagrama de \(\primeobserver\) indicado la inclinación de ésta en términos del ángulo \(\theta\).
+            \item Localiza los ejes \(t\) y \(x\) en el diagrama. No hace falta que utilices rayos de luz como hicimos en clase, usa el hecho de que la inclinación de ambos debe estar dada en términos del ángulo \(\theta\) (aunque no es mala idea hacerlo para corroborar tu respuesta).
+            \item Elige dos eventos arbitrarios que ocurran a \(t = 0\) y márcalos en el diagrama de \(\primeobserver\). ¿Son estos eventos simultáneos para \(\primeobserver\)?
+            \item Pinta una línea de \(t = \textnormal{cte}\) (que no sea \(t = 0\)) en  el diagrama de \(\primeobserver\).
+            \item Si \(v = \num{e-2}\), ¿cuál es el valor de \(\theta\)? 
+        \end{enumerate}
     \end{exercise}
 
     \begin{exercise}
