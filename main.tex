@@ -52,17 +52,29 @@
     maxcycles = 4
 }
 
+%%%%%%%%%%%%%%%%%%Theorem environments%%%%%%%%%%%%%%%%%%
 % Configuración de ambiente para problema
 \theoremstyle{break}
 \theoremheaderfont{\Large\normalfont\bfseries}
 \theorembodyfont{\normalfont}
-\theoremseparator{\bigskip}
+\theoremseparator{\bigskip} % Spacing between header and body
 \theorempreskip{1.5em}
 \theorempostskip{\topsep\bigskip}
 \theorempostwork{
     \color{customBlue} \hrule width \hsize height 2pt \kern 1mm \hrule width \hsize
     }
 \newtheorem{exercise}{Problema}
+% Configuración de ambiente para solución
+\theoremstyle{nonumberbreak}
+\theoremheaderfont{\Large\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{\medskip}
+\theorempreskip{1em}
+\theorempostskip{\topsep\medskip}
+\newtheorem{solution}{Solución}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % Configuración del paquete hyperref
 \hypersetup{
@@ -135,7 +147,7 @@
   }%
 }
 \newcommand*{\e}{\mathrm{e}} % exponential
-\newcommand{\solution}{\vspace*{4pt} \textbf{Solución}\vspace*{4pt}}
+% \newcommand{\solution}{\vspace*{4pt} \textbf{Solución}\vspace*{4pt}}
 
 %%%%%%%%%%%%%%%%%%Portada y configuración%%%%%%%%%%%%%%%%%%
 % Configuración de portada
@@ -173,9 +185,30 @@
     
     \begin{exercise}
         \kant[1]
+        \begin{solution}
+            \kant[1]
+        \end{solution}
     \end{exercise}
 
     \begin{exercise}
         \kant[1]
+        \begin{solution}
+            \kant[1]
+        \end{solution}
+    \end{exercise}
+
+    \begin{exercise}
+        \kant[1]
+        \begin{solution}
+            \kant[1-3]
+        \end{solution}
+    \end{exercise}
+
+    \pagebreak
+    \begin{exercise}
+        \kant[1]
+        \begin{solution}
+            \kant[1-4]
+        \end{solution}
     \end{exercise}
 \end{document}
