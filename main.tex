@@ -4,7 +4,8 @@
 \usepackage[english, spanish]{babel}
 \usepackage{bm}
 \usepackage{breqn}
-\usepackage{enumitem}
+\usepackage{derivative}
+\usepackage[inline]{enumitem}
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{graphicx}
@@ -261,6 +262,36 @@
 
                 Find the orthonormal basis for a two-dimensional subspace spanned by \(\left\lbrace\ket{v_{1}}, \ket{v_{2}}\right\rbrace\).
             \end{enumerate}
+        \end{enumerate}
+    \end{exercise}
+
+    \begin{exercise}
+        \begin{enumerate}[label = (\alph*)]
+            \item Let \(x \neq 0\) and \(y \neq 0\). \begin{enumerate*}[label = (\alph*)]
+                \item If \(x \perp y\), show that \(\left\lbrace x, y\right\rbrace\) is a linearly independent set.
+                \item Extend the result to mutually orthogonal nonzero vectors \(x_{1}, \dots, x_{m}\).
+            \end{enumerate*}
+
+            \item Let \(z_{1}\) and \(z_{2}\) denote complex numbers. Show that \(\innerprod{z_{1}}{z_{2}} = z_{1}\bar{z}_{2}\) defines an inner product, which yields the usual metric on the complex plane. Under what condition do we have orthogonality?
+            
+            \item Show that the norm on \(C[a, b]\) is invariant under a linear transformation \(t = \alpha\tau + \beta\). Use this to prove that the statement in 3.1-8 by mapping \([a, b]\) onto \([0, 1]\) and then considering the functions defined by \(\bar{x}(\tau) = 1,\ \bar{y}(\tau) = \tau\), where \(\tau\in[0, 1]\).
+            
+            \item If \(X\) is a finite dimensional vector space and \((e_{j})\) is a basis for \(X\), show that an inner product on \(X\) is completely determined by its values \(\gamma_{jk} = \innerprod{e_{j}}{e_{k}}\). Can we choose such scalar \(\gamma_{jk}\) in a completely arbitrary fashion?
+            
+            \item If \((e_{k})\) is an orthonormal sequence in an inner product space \(X\), and \(x \in X\), show that \(x - y\) with \(y\) given by
+            
+            \begin{equation*}
+                y = \sum_{k = 1}^{n} \alpha_{k}e_{k}
+                \condition*{\alpha_{k} = \innerprod{x}{e_{k}}}
+            \end{equation*}
+
+            is orthogonal to the subspace \(Y_{n} = \textrm{span}\left\lbrace e_{1}, \dots, \e_{n}\right\rbrace\).
+
+            \item Orthonormalize the first three terms of the sequence \((x_{0}, x_{1}, x_{2}, \cdots)\), where \(x_{j}(t) = t^{j}\), on the interval \([-1, 1]\), where
+            
+            \begin{equation*}
+                \innerprod{x}{y} = \int_{-1}^{1} x(t)y(t)\odif{t}.
+            \end{equation*}
         \end{enumerate}
     \end{exercise}
 \end{document}
