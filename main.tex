@@ -16,8 +16,8 @@
 \usepackage{microtype}
 \usepackage{nicefrac}
 \usepackage[hyperref]{ntheorem}
-% \usepackage{phfqit} % Bra-ket notation
-\usepackage{physics}
+\usepackage{phfqit} % Bra-ket notation
+% \usepackage{physics}
 \usepackage[nolabel]{showlabels}
 \usepackage{siunitx}
 \usepackage{titling}
@@ -90,10 +90,10 @@
     urlbordercolor={[rgb]{0.8,0,0.8}},%
     runbordercolor={[rgb]{0.8,0,0.8}},%
     menubordercolor={[rgb]{0,0.2,0.6}},% 
-    pdftitle={Tarea X},%
+    pdftitle={Tarea 1},%
     pdfauthor={López Merino Marcos},%
-    pdfsubject={Subject},%
-    pdfkeywords={Facultad de Ciencias, UNAM, materia, palabras clave},%
+    pdfsubject={Mecánica Cuántica},%
+    pdfkeywords={Facultad de Ciencias, UNAM, Mecánica Cuántica},%
     unicode = true%
 }
 
@@ -123,8 +123,8 @@
 }
 
 %%%%%%%%%%%%%%%%%%Nuevos comandos%%%%%%%%%%%%%%%%%%
-\newcommand*{\group}{8231}
-\newcommand*{\classname}{Relatividad}
+\newcommand*{\group}{8449}
+\newcommand*{\classname}{Mecánica Cuántica}
 \newcommand*{\homeworknumber}{Tarea 1}
 \newcommand*{\name}{Marcos López Merino}
 
@@ -150,9 +150,6 @@
   }%
 }
 \newcommand*{\e}{\mathrm{e}} % exponential
-\newcommand*{\observer}{\mathcal{O}}
-\newcommand*{\primeobserver}{\mathcal{O}^{\prime}}
-
 
 %%%%%%%%%%%%%%%%%%Portada y configuración%%%%%%%%%%%%%%%%%%
 % Configuración de portada
@@ -187,61 +184,20 @@
     \maketitle
     \thispagestyle{fancy}
     
-    
     \begin{exercise}
-        Durante el curso usaremos unidades naturales, en las que \(c = 1\) y medimos tiempo y distancia en metros. Para que te acostumbres a esto en este problema harás algunas conversiones entre unidades naturales y el SI. Aunque parezca a primera vista un simple ejercicio mecánico, recuerda que \(c = 1\) vino de entender que el espacio y el tiempo son la misma cosas física, así que posiblemente escribir otras cantidades físicas en unidades naturales nos revele más de lo que pensamos.
+        Resolver los siguientes ejercicios de \emph{Introducción al formalismo de la Mecánica Cuántica no relativista} (Spinel):
 
-        \begin{enumerate}[label = \alph*)]
-            \item Transforma las siguientes cantidades del SI a unidades naturales. Expresas tus resultados en términos de kg y m.
-            
-            \begin{enumerate}[label = \arabic*.]
-                \item Energía \(E = \SI{5}{\joule}\) (este es particularmente interesante, aquí hay implícito otro cambio total de paradigma).
-                \item Momento \(p = \SI[per-mode = power]{3e4}{\kilogram \metre \per\second}\) (compara con tu resultado anterior, qué curioso).
-                \item Densidad de masa \(\rho = \SI[per-mode = power]{10}{\kilogram \per \cubic\metre}\)
-            \end{enumerate}
-
-            \item Transforma las siguientes cantidades de unidades naturales al SI.
-            
-            \begin{enumerate}[label = \arabic*.]
-                \item Velocidad \(v = \num{e-2}\) (siempre hablaremos de velocidades entre 0 y 1, así que es importante imaginarse cuál es la magnitud de estas en unidades más humanas).
-                \item Presión \(P = \SI[per-mode = power]{e19}{\kilogram \per \cubic\metre}\)
-                \item Densidad de energía \(U = \SI[per-mode = power]{1}{\kilogram \per \cubic\metre}\) (las mismas unidades que la presión, qué raro).
-            \end{enumerate}
-
-            \item Dos de las ecuaciones de Maxwell relacionan los campos eléctrico y magnético. En el vacío estas son
-            
-            \begin{dmath}
-                \curl{\va*{E}} = -\pdv{\va*{B}}{t} \condition*{\curl{\va*{B}} = \dfrac{1}{c^{2}} \displaystyle\pdv{\va*{E}}{t}}
-            \end{dmath}
-
-            ¿Cómo se ven estas ecuaciones escritas en unidades naturales? ¿Cuál es la relación entre las unidades de \(\va*{E}\) y las de \(\va*{B}\)?
+        \begin{enumerate}[label = (\alph*)]
+            \item Con base en la propiedad (1.1.3), demostrar que el dual de \(c\ket{\beta} = \bra{\beta} c^{*}\).
         \end{enumerate}
-    \end{exercise}
 
-    \begin{exercise}
-        Considera dos sistemas de referencia inerciales \(\observer\) y \(\primeobserver\), tal que \(\primeobserver\) se mueve con velocidad \(v\) en la dirección positiva del eje \(x\) respecto a \(\observer\) y el origen de ambos sistemas es el mismo evento. En clase pintamos el diagrama de espacio-tiempo desde la perspectiva de \(\observer\) y localizamos en éste los ejes de \(\primeobserver\). En este problema encontrarás los ejes de \(\observer\) en el diagrama de \(\primeobserver\).
+        Sean \(\ket{\gamma}\) y \(\ket{\eta}\) los ket definidos por: \(\ket{\gamma} = (3 + i)\ket{a_{1}} + 4\ket{a_{2}} - 6i\ket{a_{3}}\) y \(\ket{\eta} = 2i\ket{a_{1}}+ 3\ket{a_{3}}\), donde los kets \(\ket{a_{i}}\) son ortonormales
 
-        \begin{enumerate}[label = \alph*)]
-            \item Pinta la línea de mundo de \(\observer\) en el diagrama de \(\primeobserver\) indicado la inclinación de ésta en términos del ángulo \(\theta\).
-            \item Localiza los ejes \(t\) y \(x\) en el diagrama. No hace falta que utilices rayos de luz como hicimos en clase, usa el hecho de que la inclinación de ambos debe estar dada en términos del ángulo \(\theta\) (aunque no es mala idea hacerlo para corroborar tu respuesta).
-            \item Elige dos eventos arbitrarios que ocurran a \(t = 0\) y márcalos en el diagrama de \(\primeobserver\). ¿Son estos eventos simultáneos para \(\primeobserver\)?
-            \item Pinta una línea de \(t = \textnormal{cte}\) (que no sea \(t = 0\)) en  el diagrama de \(\primeobserver\).
-            \item Si \(v = \num{e-2}\), ¿cuál es el valor de \(\theta\)? 
+        \begin{enumerate}[resume*]
+            \item Calcule la norma de los kets \(\ket{\gamma}\) y \(\ket{\eta}\) y determine sus kets normalizados \(\ket{\gamma^{\prime}}\) y \(\ket{\eta^{\prime}}\).
+            \item Encuentre los bras correspondientes a los kets \(\ket{\gamma^{\prime}}\) y \(\ket{\eta^{\prime}}\).
+            \item Calcule el producto interior \(\innerprod{\gamma^{\prime}}{\eta^{\prime}}\) y demuestre por cálculo directo que es igual a \(\left\lbrace\innerprod{\eta^{\prime}}{\gamma^{\prime}}\right\rbrace^{*}\).
+            \item Calcules los productos interiores \(\innerprod{a_{1}}{\eta^{\prime}},\ \innerprod{a_{2}}{\eta^{\prime}}\) y \(\innerprod{a_{3}}{\eta^{\prime}}\). De acuerdo con sus resultados ¿qué interpretación geométrica puede dar al producto interior?
         \end{enumerate}
-    \end{exercise}
-
-    \begin{exercise}
-        En este problema pintarás algunas cosas en un diagrama de un espacio-tiempo \(2 + 1\)-dimensional. Aunque no lo usaremos mucho a lo largo del curso, conviene que tengas una idea de cómo debe hacerse. Dado que esto involucra dibujar un espacio de tres dimensiones en papel, además de tus dibujos agrega descripciones detalladas de lo que estás mostrando. También puede ser útil que muestres el cómo se ven las cosas desde una proyección a algún plano en particular.
-
-        Considera así dos observadores inerciales \(\observer\) y \(\primeobserver\) en un espacio-tiempo \(2 + 1\)-dimensional. Sus sistemas de coordenadas tienen el mismo origen (tanto temporal como espacial), de forma tal que \(\primeobserver\) se mueve respecto a \(\observer\) en la dirección positiva del eje \(x\) (es decir con velocidad \(\va*{v} = v\uvec{x}\)). Los ejes espaciales de ambos sistemas están alineados, es decir, no hay ninguna rotación de por medio entre ambos. En el diagrama de \(\observer\) (no necesariamente el mismo dibujo, si te parece que esta muy saturado haz varios):
-
-        \begin{enumerate}[label = \alph*)]
-            \item Pinta la línea de mundo de \(\primeobserver\). ¿El eje \(t^{\prime}\) está contenido en algún plano importante?
-            \item Pinta el eje \(x^{\prime}\) argumentado con la construcción que hicimos en clase (no es necesario que la repitas paso a paso) y usando el hecho de que los ejes espaciales deben estar alineados según la convención que dimos arriba. ¿En qué plano están contenidos los ejes \(t^{\prime}\) y \(x^{\prime}\)?
-            \item Dibuja la línea de mundo de un rayo de luz que va desde el eje \(t^{\prime}\) a cierto tiempo \(t^{\prime} = -a\) hasta la parte negativa del eje \(y\). Luego dibuja la línea de mundo de otro rayo de luz que va desde la parte negativa del eje \(y\) a \(t = 0\) y llega al eje \(t^{\prime}\) a \(t^{\prime} = a\). ¿Estas líneas se intersectan? Si la respuesta es afirmativa, eso significa que el evento de la intersección es simultáneo con el origen según \(\primeobserver\).
-            \item Usa tu resultado de c) para dibujar el eje \(y^{\prime}\) usando el hecho de que los ejes espaciales deben estar alineados según la convención que dimos arriba (pintar la proyección del plano \(x^{\prime}y^{\prime}\) sobre el plano \(xy\) puede serte útil para entender mejor esto).
-            \item Dado que estamos en \(2 + 1\) dimensiones, una ecuación del tipo \(t^{\prime} = \textnormal{cte}\) describe a un plano, así que ahora tenemos planos de simultaneidad. Pinta un plano de simultaneidad de \(\primeobserver\) (que no sea el \(x^{\prime}y^{\prime}\)).
-        \end{enumerate}
-        Esto ya no es parte del ejercicio, pero puede serte útil que pintes (o imagines, el dibujo ciertamente es complicado por la perspectiva) el cómo cambiarían tus respuestas anteriores si la velocidad de \(\primeobserver\) respecto a \(\observer\) fuera \(\va*{v} = v(\cos\phi\uvec{x} + \sin\phi\uvec{y})\).
     \end{exercise}
 \end{document}
