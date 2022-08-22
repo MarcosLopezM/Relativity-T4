@@ -19,6 +19,7 @@
 \usepackage{phfqit} % Bra-ket notation
 % \usepackage{physics}
 \usepackage[nolabel]{showlabels}
+\usepackage{simples-matrices}
 \usepackage{siunitx}
 \usepackage{titling}
 \usepackage{tabularray}
@@ -198,6 +199,68 @@
             \item Encuentre los bras correspondientes a los kets \(\ket{\gamma^{\prime}}\) y \(\ket{\eta^{\prime}}\).
             \item Calcule el producto interior \(\innerprod{\gamma^{\prime}}{\eta^{\prime}}\) y demuestre por cálculo directo que es igual a \(\left\lbrace\innerprod{\eta^{\prime}}{\gamma^{\prime}}\right\rbrace^{*}\).
             \item Calcules los productos interiores \(\innerprod{a_{1}}{\eta^{\prime}},\ \innerprod{a_{2}}{\eta^{\prime}}\) y \(\innerprod{a_{3}}{\eta^{\prime}}\). De acuerdo con sus resultados ¿qué interpretación geométrica puede dar al producto interior?
+        \end{enumerate}
+    \end{exercise}
+
+    \begin{exercise}
+        \begin{enumerate}[label = (\alph*)]
+            \item Find the condition under which two vectors
+            
+            \begin{equation*}
+                \ket{v_{1}} = \matrice[1]{x, y, 3}, \quad \ket{v_{2}} = \matrice[1]{2, x - y, 1} \in \vecspace{R}[3]
+            \end{equation*}
+
+            are linearly independent.
+
+            \item Show that a set of vectors
+            
+            \begin{equation*}
+                \ket{v_{1}} = \matrice[1]{1, 1, 1},\quad \ket{v_{2}} = \matrice[1]{1, 0, 1}, \quad \ket{v_{3}} = \matrice[1]{1, -1, -1}
+            \end{equation*}
+
+            is a basis of \(\vecspace{C}[3]\).
+
+            \item Let
+            
+            \begin{equation*}
+                \ket{x} = \matrice[1]{1, i, 2 + i}, \quad
+                \ket{y} = \matrice[1]{2 - i, 1, 2 + i}.
+            \end{equation*}
+
+            Find \(\norm{\ket{x}}\), \(\innerprod{x}{y}\) and \(\innerprod{y}{x}\).
+
+            \item
+            
+            \begin{enumerate}[label = \arabic*.]
+                \item Use the Gram-Schmidt orthonormalization to find an orthonormal basis \(\left\lbrace \ket{e_{k}}\right\rbrace\) from a linearly independent set of vectors
+                
+                \begin{equation*}
+                    \ket{v_{1}} = \matrice[3]{-1{,}, 2{,}, 2}^{t},
+                    \quad
+                    \ket{v_{2}} = \matrice[3]{2{,}, -1{,}, 2}^{t},
+                    \quad
+                    \ket{v_{3}} = \matrice[3]{3{,}, 0{,}, -3}^{t}
+                \end{equation*}
+
+                \item Let
+                
+                \begin{equation*}
+                    \ket{u} = \matrice[3]{1{,}, -2{,}, 7}^{t} =
+                    \sum_{k} c_{k}\ket{e_{k}}
+                \end{equation*}
+
+                Find the coefficients \(c_{k}\).
+
+                \item Let
+                
+                \begin{equation*}
+                    \ket{v_{1}} = \matrice[3]{1{,}, i{,}, 1}^{t},
+                    \quad
+                    \ket{v_{2}} = \matrice[3]{3{,}, 1{,}, i}^{t}.
+                \end{equation*}
+
+                Find the orthonormal basis for a two-dimensional subspace spanned by \(\left\lbrace\ket{v_{1}}, \ket{v_{2}}\right\rbrace\).
+            \end{enumerate}
         \end{enumerate}
     \end{exercise}
 \end{document}
