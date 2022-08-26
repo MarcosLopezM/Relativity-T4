@@ -393,7 +393,7 @@
 
             \inlinesol
 
-            Para determinar si el conjunto de vectores \(\left\lbrace\ket{v_{1}}, \ket{v_{2}}, \ket{v_{3}}\right\rbrace\) es una base de \(\vecspace{C}[3]\) únicamente asta calcular el determinante de la matriz generada por los vectores y, verificar que éste si es diferente de cero, en caso de serlo, los vectores son linealmente independientes y generan al subespacio.
+            Para determinar si el conjunto de vectores \(\left\lbrace\ket{v_{1}}, \ket{v_{2}}, \ket{v_{3}}\right\rbrace\) es una base de \(\vecspace{C}[3]\) únicamente asta calcular el determinante de la matriz generada por los vectores y, verificar que éste si es diferente de cero, en caso de serlo, los vectores son linealmente independientes y, por lo tanto, son base.
 
             \begin{align*}
                 \det M &= \det\matrice[3]{1, 1, 1, 1, 0, -1, 1, 1, -1},\\
@@ -519,8 +519,25 @@
                 \end{equation*}
 
                 Find the coefficients \(c_{k}\).
+
+                \inlinesol
+
+                Reescribimos \(\ket{u}\), tal que,
+
+                \begin{equation*}
+                    \ket{u} = \matrice[1]{\frac{-1}{3}c_{1} + \frac{2}{3}c_{2} + \frac{2}{3}c_{3}, \frac{2}{3}c_{1} - \frac{1}{3}c_{2} + \frac{2}{3}c_{3}, \frac{2}{3}c_{1} + \frac{2}{3}c_{2} - \frac{1}{3}c_{3}} = \matrice[1]{1, -2, 7}\text{.}
+                \end{equation*}
+
+                Resolviendo el sistema de ecuaciones generado por la expresión anterior, tenemos que el valor de los coeficientes es:
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{align*}
+                    c_{1} &= 3,\\
+                    c_{2} &= 6,\\
+                    c_{3} &= -3\text{.}
+                \end{empheq}
             \end{enumerate}
 
+            % \pagebreak
             \item Let
                 
                 \begin{equation*}
@@ -530,9 +547,40 @@
                 \end{equation*}
 
                 Find the orthonormal basis for a two-dimensional subspace spanned by \(\left\lbrace\ket{v_{1}}, \ket{v_{2}}\right\rbrace\).
+
+                \inlinesol
+
+                Para encontrar una base ortonormal para un subespacio dimensional, lo hacemos usando la ortonormalización de Gram-Schmidt.
+                
+                Primero definimos el vector \(\ket{e_{1}}\), donde \(\sqrt{\braket{v_{1}}{v_{1}}} = \sqrt{3}\).
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation}
+                    \ket{e_{1}} = \frac{1}{\sqrt{3}}\matrice[1]{1, i, 1}
+                    \label{eq:2e-e1}
+                \end{empheq}
+
+                Ahora definimos el vector \(\ket{f_{2}}\),
+
+                \begin{align*}
+                    \ket{f_{2}} &= \ket{v_{2}} - \braket{e_{1}}{v_{2}}\ket{e_{1}},\\
+                    \ket{f_{2}} &= \matrice[3]{2, 1 - i, i - 1}^{t}\text{.}
+                \end{align*}
+
+                Para normalizar \(\ket{f_{2}}\), primero debemos calcular su norma, tal que,
+                
+                \begin{equation*}
+                    \sqrt{\braket{f_{2}}{f_{2}}} = 2\sqrt{2}\text{.}
+                \end{equation*}
+
+                Entonces, \(\ket{e_{2}}\) queda como
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                    \ket{e_{2}} = \frac{1}{2\sqrt{2}}\matrice[1]{2, 1 - i, i - 1}\text{.}
+                \end{empheq}
         \end{enumerate}
     \end{exercise}
 
+    \pagebreak
     \begin{exercise}
         \begin{enumerate}[label = (\alph*)]
             \item Let \(x \neq 0\) and \(y \neq 0\). \begin{enumerate*}[label = (\alph*)]
