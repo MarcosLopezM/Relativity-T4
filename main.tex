@@ -39,7 +39,7 @@
 \definecolor{base3}{RGB}{253, 246, 227}%
 \definecolor{pinkwave}{RGB}{255, 0, 128}%
 \definecolor{customBlue}{RGB}{11, 61, 98}%
-\pagecolor{base3}
+% \pagecolor{base3}
 \graphicspath{{img/}}
 \setlength{\parindent}{2em} % Sangría
 \setlength{\parskip}{0.5em} % Espacio entre párrafos
@@ -169,7 +169,7 @@
   \setbox\z@\hbox{$\displaystyle#2{}\m@th$\kern\fboxsep \kern\fboxrule}%
   \edef\@tempa{\kern\wd\z@ & \kern-\the\wd\z@ \fboxsep\the\fboxsep \fboxrule\the\fboxrule}%
   \@tempa
-  \fcolorbox{#1}{base3}{\m@th$\displaystyle#2#3$}%
+  \fcolorbox{#1}{white}{\m@th$\displaystyle#2#3$}%
 } 
 \makeatother
 
