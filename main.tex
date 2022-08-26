@@ -5,6 +5,7 @@
 \usepackage{bm}
 \usepackage{breqn}
 \usepackage{derivative}
+\usepackage{empheq}
 \usepackage[inline]{enumitem}
 \usepackage{fancyhdr}
 \usepackage{geometry}
@@ -151,7 +152,26 @@
     \mathbb{#1}%
   }%
 }
+
 \newcommand*{\e}{\mathrm{e}} % exponential
+\newcommand*{\inlinesol}{\vspace*{10pt}\textbf{Solución}\vspace*{10pt}}
+\newcommand{\crefrangeconjunction}{--}
+\newcommand{\crefpairconjunction}{\xspace y\xspace}
+
+% Defining a variant of Aboxed command from mathtools
+\makeatletter
+\newcommand*\Acolorboxed[2][pinkwave]{%
+   \let\bgroup{\romannumeral-`}%
+   \@Acolorboxed{#1}#2&&\ENDDNE
+}
+\def\@Acolorboxed#1#2&#3&#4\ENDDNE{%
+  \ifnum0=`{}\fi
+  \setbox\z@\hbox{$\displaystyle#2{}\m@th$\kern\fboxsep \kern\fboxrule}%
+  \edef\@tempa{\kern\wd\z@ & \kern-\the\wd\z@ \fboxsep\the\fboxsep \fboxrule\the\fboxrule}%
+  \@tempa
+  \fcolorbox{#1}{base3}{\m@th$\displaystyle#2#3$}%
+} 
+\makeatother
 
 %%%%%%%%%%%%%%%%%%Portada y configuración%%%%%%%%%%%%%%%%%%
 % Configuración de portada
@@ -191,18 +211,123 @@
 
         \begin{enumerate}[label = (\alph*)]
             \item Con base en la propiedad (1.1.3), demostrar que el dual de \(c\ket{\beta} = \bra{\beta} c^{*}\).
+            
+            \inlinesol
+
+            Por el postulado de la correspondencia dual la igualdad se cumple. Es decir, 
+
+            \begin{equation*}
+                c\ket{\beta} \xleftrightarrow{\scalebox{0.5}{\text{CD}}} \bra{\beta}c^{*}
+            \end{equation*}
+
+            Por lo tanto,
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                c\ket{\beta} = \bra{\beta}c^{*}
+            \end{empheq}
         \end{enumerate}
 
         Sean \(\ket{\gamma}\) y \(\ket{\eta}\) los ket definidos por: \(\ket{\gamma} = (3 + i)\ket{a_{1}} + 4\ket{a_{2}} - 6i\ket{a_{3}}\) y \(\ket{\eta} = 2i\ket{a_{1}}+ 3\ket{a_{3}}\), donde los kets \(\ket{a_{i}}\) son ortonormales
 
         \begin{enumerate}[resume*]
             \item Calcule la norma de los kets \(\ket{\gamma}\) y \(\ket{\eta}\) y determine sus kets normalizados \(\ket{\gamma^{\prime}}\) y \(\ket{\eta^{\prime}}\).
+            
+            \inlinesol
+
+            Puesto que queremos calcular la norma de los kets de \(\ket{\gamma}\) y \(\ket{\eta}\), necesitamos \(\bra{\gamma}\) y \(\bra{\eta}\), tal que,
+
+            \begin{align*}
+                \bra{\gamma} &= (3 - i)\bra{a_{1}} + 4\bra{a_{2}} + 6i\ket{a_{3}},\\
+                \bra{\eta} &= -2i\bra{a_{1}} + 3\bra{a_{3}}\text{.}
+            \end{align*}
+
+            Así,
+
+            \begin{align}
+                \sqrt{\braket{\gamma}{\gamma}} &= \left\lbrace[(3 - i)\bra{a_{1}} + 4\bra{a_{2}} + 6i\ket{a_{3}}][(3 + i)\ket{a_{1}} + 4\ket{a_{2}} - 6i\ket{a_{3}}]\right\rbrace^{\sfrac{1}{2}},\nonumber\\
+                &= \left\lbrace(3 - i)(3 + i) + 4(4) + 6i(-6i)\right\rbrace^{\sfrac{1}{2}},\nonumber\\
+                \Acolorboxed{\sqrt{\braket{\gamma}{\gamma}} &= \sqrt{62}}\label{eq:GammaNorm}
+            \end{align}
+
+            Ahora calculamos \(\sqrt{\braket{\eta}{\eta}}\),
+
+            \begin{align}
+                \sqrt{\braket{\eta}{\eta}} &= \left\lbrace[-2i\bra{a_{1}} + 3\bra{a_{3}}][2i\ket{a_{1}}+ 3\ket{a_{3}}]\right\rbrace^{\sfrac{1}{2}},\nonumber\\
+                &= \left\lbrace(-2i)(2i) + 3(3)\right\rbrace^{\sfrac{1}{2}},\nonumber\\
+                \Acolorboxed{\sqrt{\braket{\eta}{\eta}} &= \sqrt{13}}\label{eq:EtaNorm}
+            \end{align}
+
+            Para normalizar un ket debemos dividirlo por su norma, \textbf{i.e.}, debemos dividir \(\ket{\gamma}\) y \(\ket{\eta}\) por las \cref{eq:GammaNorm,eq:EtaNorm}, respectivamente.
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{align}
+                \ket{\gamma^{\prime}} &= \dfrac{1}{\sqrt{62}}[(3 + i)\ket{a_{1}} + 4\ket{a_{2}} - 6i\ket{a_{3}}],\label{eq:GammaNormalized}\\
+                \ket{\eta^{\prime}} &= \dfrac{1}{\sqrt{13}}[2i\ket{a_{1}}+ 3\ket{a_{3}}]\text{.}\label{eq:EtaNormalized}
+            \end{empheq}
+
             \item Encuentre los bras correspondientes a los kets \(\ket{\gamma^{\prime}}\) y \(\ket{\eta^{\prime}}\).
-            \item Calcule el producto interior \(\innerprod{\gamma^{\prime}}{\eta^{\prime}}\) y demuestre por cálculo directo que es igual a \(\left\lbrace\innerprod{\eta^{\prime}}{\gamma^{\prime}}\right\rbrace^{*}\).
-            \item Calcules los productos interiores \(\innerprod{a_{1}}{\eta^{\prime}},\ \innerprod{a_{2}}{\eta^{\prime}}\) y \(\innerprod{a_{3}}{\eta^{\prime}}\). De acuerdo con sus resultados ¿qué interpretación geométrica puede dar al producto interior?
+            
+            \inlinesol
+
+            Puesto que las \cref{eq:GammaNormalized,eq:EtaNormalized} son los kets \(\ket{\gamma}\) y \(\ket{\eta}\) normalizados, respectivamente; entonces, sus bras correspondientes son \(\sfrac{1}{\sqrt{62}}\bra{\gamma}\) y \(\sfrac{1}{\sqrt{13}}\bra{\eta}\). Así,
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{align*}
+                \bra{\gamma^{\prime}} &= \frac{1}{\sqrt{62}}[(3 - i)\bra{a_{1}} + 4\bra{a_{2}} + 6i\ket{a_{3}}],\\
+                \bra{\eta^{\prime}} &= \frac{1}{\sqrt{13}}[-2i\bra{a_{1}} + 3\bra{a_{3}}]\text{.}
+            \end{empheq}
+
+            \item Calcule el producto interior \(\braket{\gamma^{\prime}}{\eta^{\prime}}\) y demuestre por cálculo directo que es igual a \(\left\lbrace\braket{\eta^{\prime}}{\gamma^{\prime}}\right\rbrace^{*}\).
+            
+            \inlinesol
+
+            Calculamos \(\braket{\gamma^{\prime}}{\eta^{\prime}}\) y \(\braket{\eta^{\prime}}{\gamma^{\prime}}\).
+
+            \begin{itemize}[label = \textbullet]
+                \item \(\braket{\gamma^{\prime}}{\eta^{\prime}}\)
+                
+                \begin{align}
+                    \braket{\gamma^{\prime}}{\eta^{\prime}} &= \frac{1}{\sqrt{806}}[(3 - i)\bra{a_{1}} + 4\bra{a_{2}} + 6i\ket{a_{3}}][-2i\bra{a_{1}} + 3\bra{a_{3}}],\nonumber\\
+                    \Acolorboxed{\braket{\gamma^{\prime}}{\eta^{\prime}} &= \frac{1}{\sqrt{806}}(2 + 24i)}\label{eq:GammaprimeEtaprime}
+                \end{align}
+
+                \item \(\braket{\eta^{\prime}}{\gamma^{\prime}}\)
+                
+                \begin{align}
+                    \braket{\eta^{\prime}}{\gamma^{\prime}} &= \frac{1}{\sqrt{806}}[-2i\bra{a_{1}} + 3\bra{a_{3}}][(3 - i)\bra{a_{1}} + 4\bra{a_{2}} + 6i\ket{a_{3}}],\nonumber\\
+                    \Acolorboxed{\braket{\gamma^{\prime}}{\eta^{\prime}} &= \frac{1}{\sqrt{806}}(2 - 24i)}\label{eq:EtaprimeGammaprime}
+                \end{align}
+
+                Calculando el conjugado de la \cref{eq:EtaprimeGammaprime},
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation}
+                    \left\lbrace\braket{\eta^{\prime}}{\gamma^{\prime}}\right\rbrace^{*} = \frac{1}{\sqrt{806}}(2 + 24i)
+                    \label{eq:EtaprimeGammaprimeConjugate}
+                \end{empheq}
+            \end{itemize}
+
+            Por lo tanto, de las \cref{eq:GammaprimeEtaprime,eq:EtaprimeGammaprimeConjugate},
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                \braket{\gamma^{\prime}}{\eta^{\prime}} = \left\lbrace\braket{\eta^{\prime}}{\gamma^{\prime}}\right\rbrace^{*}
+            \end{empheq}
+
+            \item Calcules los productos interiores \(\braket{a_{1}}{\eta^{\prime}},\ \braket{a_{2}}{\eta^{\prime}}\) y \(\braket{a_{3}}{\eta^{\prime}}\). De acuerdo con sus resultados ¿qué interpretación geométrica puede dar al producto interior?
+            
+            \inlinesol
+
+            Calculamos \(\braket{a_{1}}{\eta^{\prime}},\ \braket{a_{2}}{\eta^{\prime}}\) y \(\braket{a_{3}}{\eta^{\prime}}\).
+
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{align*}
+                \braket{a_{1}}{\eta^{\prime}} &= \frac{1}{\sqrt{62}}(3 + i),\\
+                \braket{a_{2}}{\eta^{\prime}} &= \frac{4}{\sqrt{62}},\\
+                \braket{a_{3}}{\eta^{\prime}} &= \frac{-6i}{\sqrt{62}}\text{.}
+            \end{empheq}
+
+            De las expresiones anteriores podemos determinar que el producto interior nos da la proyección de \(\eta^{\prime}\) sobre \(a_{1},\ a_{2}\) y \(a_{3}\), respectivamente.
         \end{enumerate}
     \end{exercise}
 
+    \pagebreak
     \begin{exercise}
         \begin{enumerate}[label = (\alph*)]
             \item Find the condition under which two vectors
@@ -213,6 +338,51 @@
 
             are linearly independent.
 
+            \inlinesol
+
+            Sabemos que si dos vectores son linealmente dependientes podemos expresar uno de estos como un múltiplo del otro, \textbf{i.e.}, 
+
+            \begin{equation*}
+                \ket{v_{1}} = c\ket{v_{2}}\text{.}
+            \end{equation*}
+
+            Sustituyendo \(\ket{v_{1}}\) y \(\ket{v_{2}}\) en la expresión anterior:
+
+            \begin{equation*}
+                \matrice[1]{x, y, 3} = c\matrice[1]{2, x - y, 1} = \matrice[1]{2c, c(x - y), c}\text{.}
+            \end{equation*}
+
+            Así,
+
+            \begin{align}
+                x &= 2c,\label{eq:2a-firsteq}\\
+                y &= c(x - y),\label{eq:2a-secondeq}\\
+                c &= 3\text{.}\label{eq:2a-thirdeq}
+            \end{align}
+
+            Sustituimos la \cref{eq:2a-thirdeq} en la \cref{eq:2a-firsteq},
+
+            \begin{align}
+                x &= 2(3),\nonumber\\
+                x &= 6\text{.}\label{eq:2a-xvalue}
+            \end{align}
+
+            Ahora, simplificamos la \cref{eq:2a-secondeq} y sustituimos las \cref{eq:2a-thirdeq,eq:2a-xvalue}, tal que,
+
+            \begin{align*}
+                y(1 + c) &= cx,\\
+                y(1 + 3) &= 18,\\
+                y = \frac{9}{2}\text{.}
+            \end{align*}
+
+            Por lo tanto, las condiciones para que los vectores sean l.i. son:
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{align*}
+                x &= 6,\\
+                y &= \frac{9}{2},\\
+                c &= 3\text{.}
+            \end{empheq}
+
             \item Show that a set of vectors
             
             \begin{equation*}
@@ -221,15 +391,65 @@
 
             is a basis of \(\vecspace{C}[3]\).
 
+            \inlinesol
+
+            Para determinar si el conjunto de vectores \(\left\lbrace\ket{v_{1}}, \ket{v_{2}}, \ket{v_{3}}\right\rbrace\) es una base de \(\vecspace{C}[3]\) únicamente asta calcular el determinante de la matriz generada por los vectores y, verificar que éste si es diferente de cero, en caso de serlo, los vectores son linealmente independientes y generan al subespacio.
+
+            \begin{align*}
+                \det M &= \det\matrice[3]{1, 1, 1, 1, 0, -1, 1, 1, -1},\\
+                \det M &= 2 \neq 0\text{.} 
+            \end{align*}
+
+            Por lo tanto,
+            
+            \begin{empheq}[box = \color{pinkwave}]{equation*}
+                \left\lbrace\ket{v_{1}}, \ket{v_{2}}, \ket{v_{3}}\right\rbrace\, \text{es una base de}\, \vecspace{C}[3]\text{.}
+            \end{empheq}
+
+            \pagebreak
             \item Let
             
             \begin{equation*}
                 \ket{x} = \matrice[1]{1, i, 2 + i}, \quad
-                \ket{y} = \matrice[1]{2 - i, 1, 2 + i}.
+                \ket{y} = \matrice[1]{2 - i, 1, 2 + i}\text{.}
             \end{equation*}
 
             Find \(\norm{\ket{x}}\), \(\innerprod{x}{y}\) and \(\innerprod{y}{x}\).
 
+            \inlinesol
+
+            \begin{itemize}[label = \textbullet]
+                \item Norma
+                
+                Primero calculamos \(\braket{x}{x}\), tal que,
+
+                \begin{align*}
+                    \braket{x}{x} &= \matrice[3]{1, -i, 2 - i}\matrice[1]{1, i, 2+ i},\\
+                    \braket{x}{x} &= 7\text{.}
+                \end{align*}
+
+                Aplicando la raíz cuadrada a la expresión anterior, tenemos que la norma es igual a
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                    \sqrt{\braket{x}{x}} = \sqrt{7}\text{.}
+                \end{empheq}
+
+                \item \(\braket{x}{y}\)
+                
+                \begin{align*}
+                    \braket{x}{y} &= \matrice[3]{1, -i, 2 - i}\matrice[1]{2 - i, 1, 2 + i},\\
+                    \Acolorboxed{\braket{x}{y} &= 7 - 2i}
+                \end{align*}
+
+                \item \(\braket{y}{x}\)
+                
+                \begin{align*}
+                    \braket{y}{x} &= \matrice[3]{2 + i, 1, 2 - i}\matrice[1]{1, i, 2 + i},\\
+                    \Acolorboxed{\braket{y}{x} &= 7 + 2i}
+                \end{align*}
+            \end{itemize}
+
+            \pagebreak
             \item
             
             \begin{enumerate}[label = \arabic*.]
@@ -243,6 +463,54 @@
                     \ket{v_{3}} = \matrice[3]{3{,}, 0{,}, -3}^{t}
                 \end{equation*}
 
+                \inlinesol
+
+                Primero definimos un vector, para normalizamos \(\ket{v_{1}}\), tal que,
+
+                \begin{equation*}
+                    \ket{e_{1}} = \dfrac{\ket{v_{1}}}{\sqrt{\braket{v_{1}}{v_{1}}}},
+                \end{equation*}
+
+                donde la norma es
+
+                \begin{equation*}
+                    \sqrt{\braket{v_{1}}{v_{1}}} = 3\text{.}
+                \end{equation*}
+
+                Entonces, 
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation}
+                    \ket{e_{1}} = \dfrac{\matrice[3]{-1, 2, 2}^{t}}{3}\text{.}
+                    \label{eq:2d-e1}
+                \end{empheq}
+
+                Ahora definimos el vector \(\ket{f_{2}}\),
+
+                \begin{align*}
+                    \ket{f_{2}} &= \matrice[3]{2, -1, 2}^{t} - \frac{1}{3}\matrice[1]{-1, 2, 2}\matrice[3]{-1, 2, 2}\matrice[1]{2, -1, 2},\\
+                    \ket{f_{2}} &= \matrice[3]{2, -1, 2}^{t}\text{.}
+                \end{align*}
+
+                Por otro lado, tenemos que \(\sqrt{\braket{f_{2}}{f_{2}}} = 3\). Entonces el vector \(\ket{e_{2}}\) está dado como:
+            
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation}
+                    \ket{e_{2}} = \dfrac{\matrice[3]{2, -1, 2}^{t}}{3}\text{.}
+                    \label{eq:2d-e2}
+                \end{empheq}
+
+                Definimos el vector \(\ket{f_{3}}\), tal que,
+
+                \begin{align*}
+                    \ket{f_{3}} &= \ket{v_{3}} - \braket{e_{1}}{v_{3}}\ket{e_{1}} - \braket{e_{2}}{v_{3}}\ket{e_{2}},\\
+                    \ket{f_{3}} &= \matrice[3]{2, 2, -1}^{t}\text{.}
+                \end{align*}
+
+                Tenemos que \(\sqrt{\braket{f_{3}}{f_{3}}} = 3\), entonces el vector \(\ket{e_{3}}\) es
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation}
+                    \ket{e_{3}} = \dfrac{\matrice[3]{2, 2, -1}^{t}}{3}
+                \end{empheq}
+
                 \item Let
                 
                 \begin{equation*}
@@ -251,17 +519,17 @@
                 \end{equation*}
 
                 Find the coefficients \(c_{k}\).
+            \end{enumerate}
 
-                \item Let
+            \item Let
                 
                 \begin{equation*}
                     \ket{v_{1}} = \matrice[3]{1{,}, i{,}, 1}^{t},
                     \quad
-                    \ket{v_{2}} = \matrice[3]{3{,}, 1{,}, i}^{t}.
+                    \ket{v_{2}} = \matrice[3]{3{,}, 1{,}, i}^{t}\text{.}
                 \end{equation*}
 
                 Find the orthonormal basis for a two-dimensional subspace spanned by \(\left\lbrace\ket{v_{1}}, \ket{v_{2}}\right\rbrace\).
-            \end{enumerate}
         \end{enumerate}
     \end{exercise}
 
