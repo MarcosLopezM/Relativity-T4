@@ -70,6 +70,8 @@
     \color{customBlue} \hrule width \hsize height 2pt \kern 1mm \hrule width \hsize
     }
 \newtheorem{exercise}{Problema}
+\counterwithin{equation}{exercise}
+
 % Configuración de ambiente para solución
 \theoremstyle{nonumberbreak}
 \theoremheaderfont{\Large\normalfont\bfseries}
@@ -273,6 +275,39 @@
                 \end{equation*}
 
                 Dado lo que acabas de demostrar en a), ¿se te ocurre un ejemplo de una transformación que deje invariante al intervalo? Es una transformación espacio-temporal, así que también debes especificar cuál es el cambio en la coordenada temporal.
+
+                \inlinesol
+
+                Las transformaciones que dejan invariante al intervalo son las transformaciones de Lorentz, tales que \(\primeobserver\) se mueve con \(v > 0\) en la dirección positiva del eje \(x\), tales que,
+                
+                \begin{equation}
+                    \begin{aligned}
+                        t^{\prime} &= \gamma(t - vx),\\
+                        x^{\prime} &= \gamma(x - vt),\\
+                        y^{\prime} &= y, 
+                    \end{aligned}
+                    \label{eq:lorentzT}
+                \end{equation}
+
+                donde \(\gamma = \sfrac{1}{\sqrt{1 - v^{2}}}\), \(y^{\prime}\) permanece invariante ya que no hay movimiento en esa dirección.
+
+                Sustituyendo (\ref{eq:lorentzT}) en la expresión para el intervalo,
+
+                \begin{align*}
+                    (\Delta s^{\prime})^{2} &= -(\gamma(t^{\prime\prime} - vx^{\prime\prime}) - \gamma(t - vx))^{2} + (\gamma(x^{\prime\prime} - vt^{\prime\prime}) - \gamma(x - vt))^{2} + (y^{\prime\prime} - y)^{2},\\
+                    &= -\gamma^{2}((t^{\prime\prime} - t) - v(x^{\prime\prime} - x))^{2} + \gamma^{2}((x^{\prime\prime} - x) - v(t^{\prime\prime} - t))^{2} + (y^{\prime\prime} - y)^{2},\\
+                    &= \gamma^{2}[(1 - v^{2})(\Delta x^{\prime})^{2} - (1 - v^{2})(\Delta t^{\prime})^{2}] + (\Delta y^{\prime})^{2},\\
+                    &= \dfrac{1}{(1 - v^{2})}(1 - v^{2})[(\Delta x^{\prime})^{2} - (\Delta t^{\prime})^{2}] + (\Delta y^{\prime})^{2},\\
+                    &= - (\Delta t^{\prime})^{2} + (\Delta x^{\prime})^{2} + (\Delta y^{\prime})^{2}
+                \end{align*}
+
+                Por lo tanto,
+
+                \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                    (\Delta s^{\prime})^{2} = - (\Delta t^{\prime})^{2} + (\Delta x^{\prime})^{2} + (\Delta y^{\prime})^{2} = (\Delta s)^{2}
+                \end{empheq}
+
+                Es decir, el intervalo es invariante ante las transformaciones de Lorentz.
         \end{enumerate}
     \end{exercise}
 
