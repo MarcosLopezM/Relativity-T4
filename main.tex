@@ -21,7 +21,7 @@
 \usepackage[hyperref]{ntheorem}
 % \usepackage{phfqit} % Bra-ket notation
 % \usepackage{physics}
-\usepackage[nolabel]{showlabels}
+\usepackage[inline]{showlabels}
 % \usepackage{simples-matrices}
 \usepackage{siunitx}
 \usepackage{titling}
@@ -49,7 +49,7 @@
 \setlength{\parskip}{0.5em} % Espacio entre párrafos
 \linespread{1.1} % line spacing
 \setlength{\jot}{10pt} % Space between lines in multiline eqs
-% \crefname{equation}{ec.}{ecs.} % Equation's cross-reference name
+\crefname{equation}{ec.}{ecs.} % Equation's cross-reference name
 
 % Line-breaker config
 \linebreakersetup {
@@ -316,7 +316,67 @@
 
         \begin{enumerate}[label = \alph*)]
             \item Pinta los ejes de los tres sistemas en el diagrama de \(\observer\). Indica con claridad cuál es la inclinación de los ejes.
+            
+            \inlinesol
+
+            Tenemos que la línea de mundo del observador de \(\primeobserver\) cuando \(x = 0\), la cual coincide con el eje \(t^{\prime}\), está dada como:
+
+            \begin{equation}
+                x = vt.
+                \label{eq:tprime}
+            \end{equation}
+            
+            Asimismo, la línea de mundo para \(\biprimeobserver\) cuando \(x = 0\), es
+
+            \begin{equation}
+                x = -vt.
+                \label{eq:tbiprime}
+            \end{equation}
+
+            Donde las \cref{eq:tprime,eq:tbiprime} tienen el mismo ángulo de inclinación pero en dirección opuesta, tal que el ángulo de \(t^{\prime}\) y \(t^{\prime\prime}\), respectivamente, 
+            
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                \theta = \arctan\theta\quad \wedge\quad -\arctan\theta.
+            \end{empheq}
+
+            De esta manera, lo ejes de los tres sistemas en el diagrama de \(\observer\) quedan como en la \cref{fig:OprimeObiprimeInO}. 
+
+            \begin{figure}[htb]
+                \centering
+                \includegraphics{example-image}
+                \caption{Ejes coordenados de \(\primeobserver\) y \(\biprimeobserver\) en el diagrama de \(\observer\).}
+                \label{fig:OprimeObiprimeInO}
+            \end{figure}
+
             \item Elige algún evento \(B\) en el eje \(x\) (que no sea el origen) y márcalo en el diagrama. ¿Cuál es el tipo de separación que hay entre \(A\) y \(B\)? Recuerda que esta respuesta es independiente del sistema de referencia que use para hacer el cálculo.
+            
+            \inlinesol
+            
+            En la \cref{fig:ABEventsInO}, se muestran los conos de luz para los eventos \(A\) y \(B\), respectivamente. 
+
+            \begin{figure}[htb]
+                \centering
+                \includegraphics{example-image}
+                \caption{Conos de luz de los eventos \(A\) y \(B\).}
+                \label{fig:ABEventsInO}
+            \end{figure}
+
+            Notamos entonces que para el evento \(A\), \(B\) está fuera su cono de luz y, para \(B\), \(A\) está fuera de su cono de luz. Esto quiere decir que para el observador \(\observer\), la separación entre \(A\) y \(B\) es espacialoide, \textbf{i.e.}, \((\Delta s)^{2} > 0\).
+
+            Analíticamente podemos determinar que la afirmación anterior es verdadera. Así,
+            
+            \begin{align*}
+                (\Delta s)^{2} &= -(t_{B} - t_{A})^{2} + (x_{B} - x_{A})^{2},\\
+                &= -(0 - 0)^{2} + (x_{B} - 0)^{2},\\
+                (\Delta s)^{2} &= {x_{B}}^{2}. 
+            \end{align*}
+
+            En particular notamos que \(B\) es un evento diferente del origen, por lo que \(x_{B} \neq 0 \implies {x_{B}}^{2} > 0\). Por lo tanto,
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                (\Delta s)^{2} > 0.
+            \end{empheq}
+
             \item ¿Según \(\observer\) qué evento ocurre primero, \(A\) o \(B\)?
             \item ¿Según \(\primeobserver\) qué evento ocurre primero, \(A\) o \(B\)? Pinta la línea de los eventos que son simultáneos a \(B\) según \(\primeobserver\).
             \item ¿Según \(\biprimeobserver\) qué evento ocurre primero, \(A\) o \(B\)? Pinta la línea de los eventos que son simultáneos a \(B\) según \(\primeobserver\).
