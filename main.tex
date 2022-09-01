@@ -43,7 +43,7 @@
 \definecolor{base3}{RGB}{253, 246, 227}%
 \definecolor{pinkwave}{RGB}{255, 0, 128}%
 \definecolor{customBlue}{RGB}{11, 61, 98}%
-% \pagecolor{base3}
+\pagecolor{base3}
 \graphicspath{{img/}}
 \setlength{\parindent}{2em} % Sangría
 \setlength{\parskip}{0.5em} % Espacio entre párrafos
@@ -229,6 +229,40 @@
                 \end{align*}
 
                 donde \(\theta\) es un ángulo constante.
+
+            \inlinesol
+
+            A partir de las transformaciones, tenemos que 
+
+            \begin{equation}
+                \begin{aligned}
+                    {x^{\prime}}^{0} &= x^{0}\cos\theta - y^{0}\sin\theta,\\
+                    {y^{\prime}}^{0} &= x^{0}\sin\theta + y^{0}\cos\theta,\\
+                    {x^{\prime}}^{1} &= x^{1}\cos\theta - y^{1}\sin\theta,\\
+                    {y^{\prime}}^{1} &= x^{1}\sin\theta + y^{1}\cos\theta.
+                \end{aligned}
+                \label{eq:points}
+            \end{equation}
+
+            Sustituyendo (\ref{eq:points}) en la expresión para la distancia Euclidiana,
+
+            \begin{align*}
+                (\Delta r^{\prime})^{2} &= ({x^{\prime}}^{1} - {x^{\prime}}^{0})^{2} + ({y^{\prime}}^{1} - {y^{\prime}}^{0})^{2},\\
+                &= ((x^{1}\cos\theta - y^{1}\sin\theta) - (x^{0}\cos\theta - y^{0}\sin\theta))^{2}
+                + ((x^{1}\sin\theta + y^{1}\cos\theta) - (x^{0}\sin\theta + y^{0}\cos\theta))^{2},\\
+                &= (\cos\theta(x^{1} - x^{0}) - \sin\theta(y^{1} - y^{0})^{2} + (\cos\theta(x^{1} - x^{0}) + \sin\theta(y^{1} - y^{0})^{2},\\
+                &= (x^{1} - x^{0})^{2}(\cos^{2}\theta + \sin^{2}\theta) + (y^{1} - y^{0})^{2}(\cos^{2}\theta + \sin^{2}\theta),\\
+                &= (x^{1} - x^{0})^{2} + (y^{1} - y^{0})^{2}.
+            \end{align*}
+
+            \pagebreak
+            Por lo tanto,
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                (\Delta r^{\prime})^{2} = (\Delta x^{\prime})^{2} + (\Delta y^{\prime})^{2} = (\Delta r)^{2}.
+            \end{empheq}
+
+            Es decir, la distancia Euclidiana es invariante ante rotaciones.
 
             \item Considera ahora un espacio-tiempo 2+1-dimensional y un observador inercial \(\observer\) en éste.
             
