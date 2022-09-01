@@ -24,6 +24,7 @@
 \usepackage[inline]{showlabels}
 % \usepackage{simples-matrices}
 \usepackage{siunitx}
+\usepackage{soul}
 \usepackage{titling}
 \usepackage{tabularray}
 \usepackage{tasks}
@@ -389,7 +390,7 @@
 
             Para determinar cuál de los eventos ocurre primero, dibujamos los ejes de \(\observer\) en el diagrama de \(\primeobserver\), así como los eventos.
 
-            De tal manera que observamos que para \(\primeobserver\), el evento \(B\) ocurre primero. Y, además, los eventos simultáneos a \(B\) son aquellos que ocurren al tiempo \({t_{B}}^{\prime}\) (véase \cref{fig:ABInOPrime}).
+            De tal manera que observamos que para \(\primeobserver\), el evento \(B\) ocurre primero. Y, además, los eventos simultáneos a \(B\) son aquellos que ocurren al tiempo \(t^{\prime} = {t_{B}}^{\prime}\) (véase \cref{fig:ABInOPrime}).
 
             \begin{figure}[htb]
                 \centering
@@ -399,10 +400,74 @@
             \end{figure}
 
             \item ¿Según \(\biprimeobserver\) qué evento ocurre primero, \(A\) o \(B\)? Pinta la línea de los eventos que son simultáneos a \(B\) según \(\primeobserver\).
+            
+            \inlinesol
+
+            Los ejes de \(\primeobserver\) dibujados en el diagrama de \(\biprimeobserver\) queda igual que los ejes de \(\primeobserver\) en el diagrama de \(\observer\). Esto se debe a que \(\biprimeobserver\) observa que \(\observer\) se aleja con velocidad \(v > 0\) respecto a éste.
+            
+            De esta manera, notamos que para \(\biprimeobserver\) el evento \(A\) ocurre primero. Y los eventos simultáneos a \(B\) ocurren a \(t^{\prime\prime} = {t_{B}}^{\prime\prime}\).
+
+            \begin{figure}[htb]
+                \centering
+                \includegraphics{example-image}
+                \caption{Ejes de \(\observer\) dibujados en el diagrama de \(\biprimeobserver\), así como la línea de los eventos simultáneos al evento \(B\).}
+                \label{fig:OInOPrimePrime}
+            \end{figure}
+
             \item Elige ahora un evento \(C\) en el eje \(t\) (que no sea el origen) y márcalo en el diagrama. ¿Cuál es el tipo de separación que hay entre \(A\) y \(C\)? Recuerda que esta respuesta es independiente del sistema de referencia que uses para hacer el cálculo.
+            
+            \inlinesol
+
+            Dibujamos un punto \(C\), tal que \(x = 0\), \textbf{i.e.}, \((c, 0)\), con \(c \neq 0\). Además, dibujamos el cono de luz correspondiente a cada evento, tenemos que la separación entre estos es de tipo \setulcolor{pinkwave}\ul{temporaloide}.
+
+            Analíticamente podemos comprobar esta afirmación, tal que,
+
+            \begin{align*}
+                (\Delta s)^{2} &= -(t_{C} - t_{A})^{2} + (x_{C} - x_{A})^{2},\\
+                &= -(t_{C} - 0)^{2} + (0 - 0)^{2},\\
+                &= -(t_{C})^{2}.
+            \end{align*}
+
+            \begin{figure}[htb]
+                \centering
+                \includegraphics{example-image}
+                \caption{Conos de luz correspondientes a los eventos \(A\) y \(B\) para determinar el tipo de separación que hay entre estos.}
+                \label{fig:ABIntervalInO}
+            \end{figure}
+
+            Notamos entonces que sin importar que el evento \(C\) suceda antes o después del evento \(A\), su intervalo siempre será \((\Delta s)^{2} < 0\), lo cual nos permite, una vez más, concluir que la separación entre los eventos es temporaloide. 
+
             \item ¿Según \(\observer\) qué evento ocurre primero, \(A\) o \(C\)?
+            
+            Por como dibujamos el evento \(C\) en la \cref{fig:ABIntervalInO}, tenemos que para \(\observer\) el evento \(A\) ocurre primero.
+
             \item ¿Según \(\primeobserver\) qué evento ocurre primero, \(A\) o \(C\)? Pinta la línea de los eventos que son simultáneos a \(C\) según \(\primeobserver\).
+            
+            \inlinesol
+
+            Ahora queremos determinar cuál de los eventos del inciso e) ocurre primero para \(\primeobserver\). Dibujamos el diagrama de espacio-tiempo de la \cref*{fig:ABInOprime}, agregando el evento \(C\).
+
+            Observamos entonces que para \(\primeobserver\) el evento que ocurre primero es \(A\) y, además, los eventos simultáneos a \(C\) son aquellos que ocurren al tiempo \(t^{\prime} = {t_{C}}^{\prime}\) (véase \cref{fig:ACInOPrime}).
+
+            \begin{figure}[htb]
+                \centering
+                \includegraphics{example-image}
+                \caption{Eventos \(A\) y \(C\) dibujados en el diagrama de \(\primeobserver\), así como la línea de los eventos simultáneos a \(C\).}
+                \label{fig:ACInOPrime}
+            \end{figure}
+
             \item ¿Según \(\biprimeobserver\) qué evento ocurre primero, \(A\) o \(C\)? Pinta la línea de los eventos que son simultáneos a \(C\) según \(\biprimeobserver\).
+            
+            \inlinesol
+
+            Replicando el diagrama de la \cref{fig:OInOPrimePrime} agregando el evento \(C\), tenemos que directamente podemos determinar que el evento \(A\) ocurre primero para el observador \(\biprimeobserver\) y, además, los eventos simultáneos a \(C\) son aquellos que ocurren a \(t^{\prime\prime} = {t_{C}}^{\prime\prime}\) (véase \cref{fig:ACInOPrimePrime}).
+
+            \begin{figure}[htb]
+                \centering
+                \includegraphics{example-image}
+                \caption{Eventos \(A\) y \(C\) dibujados en el diagrama de \(\primeobserver\), así como la línea de los eventos simultáneos a \(C\).}
+                \label{fig:ACInOPrimePrime}
+            \end{figure}
         \end{enumerate}
     \end{exercise}
 
