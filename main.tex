@@ -165,7 +165,15 @@
 \newcommand*{\primeobserver}{\mathcal{O}^{\prime}}
 \newcommand*{\biprimeobserver}{\mathcal{O}^{\prime\prime}}
 \newcommand*{\inlinesol}{\vspace*{10pt}\textbf{Solución}\vspace*{10pt}}
-\newcommand*{\change}[1]{\Delta{#1}\xspace}
+% \newcommand*{\change}[1]{\Delta{#1}\xspace}
+
+\NewDocumentCommand{\change}{ s o m }{%
+    \IfBooleanTF{#1}{%
+        \Delta {#3^{\prime}}
+    }{%
+        \Delta {#3}
+    }
+}
 % \newcommand{\crefrangeconjunction}{--}
 % \newcommand{\crefpairconjunction}{\xspace y\xspace}
 
@@ -225,7 +233,14 @@
         La expresión (con el factor de \(c\) restituido) a la que llegamos en clase es
 
         \begin{equation}
-            \change{t} = \Delta t
+            \change{t} = \dfrac{\change*{t}}{\sqrt{1 - \frac{v^{2}}{v^{2}}}},
         \end{equation}
+
+        donde el sistema \(\observer\) corresponde a un observador en Ciudad Central, \(\primeobserver\) corresponde a Flash.
+
+        \begin{enumerate}[label = \alph*)]
+            \item Calcula la velocidad \(v\) con la que Flash corrió hacia el banco según \(\observer\) (mucho cuidado con los decimales).
+            \item Si Flash hubiera viaja a \(v = 0.9c\), ¿cuánto tiempo habría tardado en llegar al banco según \(\observer\)? Supón que para Flash aún pasaron solo 30 segundos. La respuesta a este problema debe darte una idea de las velocidades necesarias para que los efectos relativistas sean perceptibles.
+        \end{enumerate}
     \end{exercise}
 \end{document}
