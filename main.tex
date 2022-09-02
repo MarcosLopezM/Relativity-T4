@@ -279,39 +279,26 @@
 
                 \inlinesol
 
-                Las transformaciones que dejan invariante al intervalo son las transformaciones de Lorentz, tales que \(\primeobserver\) se mueve con \(v > 0\) en la dirección positiva del eje \(x\), tales que,
-                
+                Notamos que el intervalo para el espacio-tiempo 2+1-dimensional se puede escribir como
+
                 \begin{equation}
-                    \begin{aligned}
-                        t^{\prime} &= \gamma(t - vx),\\
-                        x^{\prime} &= \gamma(x - vt),\\
-                        y^{\prime} &= y, 
-                    \end{aligned}
-                    \label{eq:lorentzT}
+                    (\Delta s)^{2} = -(\Delta t)^{2} + (\Delta r)^{2},
+                    \label{eq:2plus1Interval}
                 \end{equation}
 
-                donde \(\gamma = \sfrac{1}{\sqrt{1 - v^{2}}}\), \(y^{\prime}\) permanece invariante ya que no hay movimiento en esa dirección.
+                donde \((\Delta r)^{2} = (\Delta x)^{2} + (\Delta y)^{2} + (\Delta z)^{2}\). 
+                
+                Por el inciso anterior sabemos que \((\Delta r)^{2}\) es invariante, entonces para que el intervalo (\cref{eq:2plus1Interval}) quedé invariante, necesitamos que \((\Delta t)^{2}\), por lo que tendremos que \(t^{\prime} = t\). De esta manera, las transformaciones que dejan invariante a la \cref{eq:2plus1Interval} son:
 
-                Sustituyendo (\ref{eq:lorentzT}) en la expresión para el intervalo,
-
-                \begin{align*}
-                    (\Delta s^{\prime})^{2} &= -(\gamma(t^{\prime\prime} - vx^{\prime\prime}) - \gamma(t - vx))^{2} + (\gamma(x^{\prime\prime} - vt^{\prime\prime}) - \gamma(x - vt))^{2} + (y^{\prime\prime} - y)^{2},\\
-                    &= -\gamma^{2}((t^{\prime\prime} - t) - v(x^{\prime\prime} - x))^{2} + \gamma^{2}((x^{\prime\prime} - x) - v(t^{\prime\prime} - t))^{2} + (y^{\prime\prime} - y)^{2},\\
-                    &= \gamma^{2}[(1 - v^{2})(\Delta x^{\prime})^{2} - (1 - v^{2})(\Delta t^{\prime})^{2}] + (\Delta y^{\prime})^{2},\\
-                    &= \dfrac{1}{(1 - v^{2})}(1 - v^{2})[(\Delta x^{\prime})^{2} - (\Delta t^{\prime})^{2}] + (\Delta y^{\prime})^{2},\\
-                    &= - (\Delta t^{\prime})^{2} + (\Delta x^{\prime})^{2} + (\Delta y^{\prime})^{2}
-                \end{align*}
-
-                Por lo tanto,
-
-                \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
-                    (\Delta s^{\prime})^{2} = - (\Delta t^{\prime})^{2} + (\Delta x^{\prime})^{2} + (\Delta y^{\prime})^{2} = (\Delta s)^{2}
+                \begin{empheq}[box = \color{pinkwave}\fbox]{align*}
+                    t^{\prime} &= t,\\
+                    x^{\prime} &= x\cos\theta - y\sin\theta,\\
+                    y^{\prime} &= x\sin\theta + y\cos\theta.
                 \end{empheq}
-
-                Es decir, el intervalo es invariante ante las transformaciones de Lorentz.
         \end{enumerate}
     \end{exercise}
 
+    \pagebreak
     \begin{exercise}
         Considera tres sistemas de referencia inerciales \(\observer,\ \primeobserver\) y \(\biprimeobserver\) en un espacio-tiempo 1+1-dimensional. El sistema se mueve con velocidad \(v\) a lo largo de la dirección positiva del eje \(x\) respecto a \(\observer\), mientras que el sistema \(\biprimeobserver\) se mueve con velocidad \(-v\) también respecto a \(\observer\) (es decir, en la dirección \(x\) negativa). Además, estos sistemas son tales que el origen de los tres coincide en el mismo evento \(A\).
 
@@ -344,11 +331,12 @@
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
+                \includegraphics[scale = 0.15]{fig-2.1.pdf}
                 \caption{Ejes coordenados de \(\primeobserver\) y \(\biprimeobserver\) en el diagrama de \(\observer\).}
                 \label{fig:OprimeObiprimeInO}
             \end{figure}
 
+            \pagebreak
             \item Elige algún evento \(B\) en el eje \(x\) (que no sea el origen) y márcalo en el diagrama. ¿Cuál es el tipo de separación que hay entre \(A\) y \(B\)? Recuerda que esta respuesta es independiente del sistema de referencia que use para hacer el cálculo.
             
             \inlinesol
@@ -357,7 +345,7 @@
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
+                \includegraphics[scale = 0.15]{fig-2.2.pdf}
                 \caption{Conos de luz de los eventos \(A\) y \(B\).}
                 \label{fig:ABEventsInO}
             \end{figure}
@@ -394,31 +382,33 @@
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
+                \includegraphics[scale = 0.15]{fig-2.3.pdf}
                 \caption{Eventos \(A\) y \(B\) dibujados en el diagrama de \(\primeobserver\).}
                 \label{fig:ABInOPrime}
             \end{figure}
 
-            \item ¿Según \(\biprimeobserver\) qué evento ocurre primero, \(A\) o \(B\)? Pinta la línea de los eventos que son simultáneos a \(B\) según \(\primeobserver\).
+            \pagebreak
+            \item ¿Según \(\biprimeobserver\) qué evento ocurre primero, \(A\) o \(B\)? Pinta la línea de los eventos que son simultáneos a \(B\) según \(\biprimeobserver\).
             
             \inlinesol
 
-            Los ejes de \(\primeobserver\) dibujados en el diagrama de \(\biprimeobserver\) queda igual que los ejes de \(\primeobserver\) en el diagrama de \(\observer\). Esto se debe a que \(\biprimeobserver\) observa que \(\observer\) se aleja con velocidad \(v > 0\) respecto a éste.
+            Los ejes de \(\primeobserver\) dibujados en el diagrama de \(\biprimeobserver\) queda igual que los ejes de \(\primeobserver\) en el diagrama de \(\observer\). Esto se debe a que \(\biprimeobserver\) observa que \(\observer\) se aleja con velocidad \(v > 0\) respecto a éste (véase \cref{fig:OInOPrimePrime}).
             
             De esta manera, notamos que para \(\biprimeobserver\) el evento \(A\) ocurre primero. Y los eventos simultáneos a \(B\) ocurren a \(t^{\prime\prime} = {t_{B}}^{\prime\prime}\).
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
+                \includegraphics[scale = 0.15]{fig-2.4.pdf}
                 \caption{Ejes de \(\observer\) dibujados en el diagrama de \(\biprimeobserver\), así como la línea de los eventos simultáneos al evento \(B\).}
                 \label{fig:OInOPrimePrime}
             \end{figure}
 
+            \pagebreak
             \item Elige ahora un evento \(C\) en el eje \(t\) (que no sea el origen) y márcalo en el diagrama. ¿Cuál es el tipo de separación que hay entre \(A\) y \(C\)? Recuerda que esta respuesta es independiente del sistema de referencia que uses para hacer el cálculo.
             
             \inlinesol
 
-            Dibujamos un punto \(C\), tal que \(x = 0\), \textbf{i.e.}, \((c, 0)\), con \(c \neq 0\). Además, dibujamos el cono de luz correspondiente a cada evento, tenemos que la separación entre estos es de tipo \setulcolor{pinkwave}\ul{temporaloide}.
+            Dibujamos un punto \(C\) (véase \cref{fig:ABIntervalInO}), tal que \(x = 0\), \textbf{i.e.}, \((c, 0)\), con \(c \neq 0\). Además, dibujamos el cono de luz correspondiente a cada evento, tenemos que la separación entre estos es de tipo \setulcolor{pinkwave}\ul{temporaloide}.
 
             Analíticamente podemos comprobar esta afirmación, tal que,
             
@@ -430,7 +420,7 @@
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
+                \includegraphics[scale = 0.15]{fig-2.5.pdf}
                 \caption{Conos de luz correspondientes a los eventos \(A\) y \(B\) para determinar el tipo de separación que hay entre estos.}
                 \label{fig:ABIntervalInO}
             \end{figure}
@@ -445,17 +435,18 @@
             
             \inlinesol
 
-            Ahora queremos determinar cuál de los eventos del inciso e) ocurre primero para \(\primeobserver\). Dibujamos el diagrama de espacio-tiempo de la \cref*{fig:ABInOprime}, agregando el evento \(C\).
+            Ahora queremos determinar cuál de los eventos del inciso e) ocurre primero para \(\primeobserver\). Dibujamos el diagrama de espacio-tiempo de la \cref{fig:ABInOPrime}, agregando el evento \(C\).
 
             Observamos entonces que para \(\primeobserver\) el evento que ocurre primero es \(A\) y, además, los eventos simultáneos a \(C\) son aquellos que ocurren al tiempo \(t^{\prime} = {t_{C}}^{\prime}\) (véase \cref{fig:ACInOPrime}).
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
+                \includegraphics[scale = 0.15]{fig-2.6.pdf}
                 \caption{Eventos \(A\) y \(C\) dibujados en el diagrama de \(\primeobserver\), así como la línea de los eventos simultáneos a \(C\).}
                 \label{fig:ACInOPrime}
             \end{figure}
 
+            \pagebreak
             \item ¿Según \(\biprimeobserver\) qué evento ocurre primero, \(A\) o \(C\)? Pinta la línea de los eventos que son simultáneos a \(C\) según \(\biprimeobserver\).
             
             \inlinesol
@@ -464,13 +455,14 @@
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
-                \caption{Eventos \(A\) y \(C\) dibujados en el diagrama de \(\primeobserver\), así como la línea de los eventos simultáneos a \(C\).}
+                \includegraphics[scale = 0.15]{fig-2.7.pdf}
+                \caption{Eventos \(A\) y \(C\) dibujados en el diagrama de \(\biprimeobserver\), así como la línea de los eventos simultáneos a \(C\).}
                 \label{fig:ACInOPrimePrime}
             \end{figure}
         \end{enumerate}
     \end{exercise}
 
+    \pagebreak
     \begin{exercise}
         Es útil aprender a visualizar el intervalo entre dos eventos en los diagramas de espacio-tiempo, similar a como sabemos visualizar la distancia entre dos puntos en el espacio Euclidiano. Considera así un espacio-tiempo 1+1-dimensional y dos observadores inerciales \(\observer\) y \(\primeobserver\) en éste, tales que \(\primeobserver\) se mueve con velocidad \(v > 0\) respecto a \(\observer\). El origen de ambos está colocado en el origen.
 
@@ -483,7 +475,7 @@
 
             \begin{figure}[htb]
                 \centering
-                \includegraphics{example-image}
+                \includegraphics[scale = 0.15]{fig-2.8.pdf}
                 \caption{Evento \(B = (b, 0)\) dibujado en el diagrama de espacio-tiempo de \(\observer\).}
                 \label{fig:Bequalsb0InO}
             \end{figure}
@@ -499,6 +491,7 @@
                 \label{eq:IntervalAB}
             \end{align}
 
+            \pagebreak
             De la \cref{eq:IntervalAB}, tenemos que
 
             \begin{equation*}
@@ -536,9 +529,94 @@
             \end{figure}
 
             \item Pinta los ejes de \(\primeobserver\) em el diagrama de \(\observer\). ¿El lugar geométrico que encontraste en el inciso c) intersecta con el eje \(t^{\prime}\)? ¿En qué eventos? Márcalos en el diagrama.
+            
+            \inlinesol
+            
+            Para encontrar en que punto se intersectan la \cref{eq:hyperbole} y el eje \(t^{\prime}\) debemos igualar las expresiones, pero primero debemos resolver la \cref{eq:hyperbole} para \(x\), tal que,
+
+            \begin{equation}
+                \boxed{x = \sqrt{t^{2} - b^{2}}.}
+                \label{eq:hyperboleBranches}
+            \end{equation}
+
+            Igualando la \cref{eq:hyperboleBranches} y \(x = vt\) (ecuación de \(t^{\prime}\)).
+
+            \begin{align}
+                vt &= \sqrt{t^{2} - b^{2}},\nonumber\\
+                v^{2}t^{2} &= t^{2} - b^{2},\nonumber\\
+                \Acolorboxed{t &= \pm \dfrac{b}{\sqrt{1 - v^{2}}}.}
+                \label{eq:TValuesIntersection}
+            \end{align}
+
+            \pagebreak
+            Sustituyendo la \cref{eq:TValuesIntersection} en \(x = vt\),
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation}
+                \begin{aligned}
+                    x_{1} &= \dfrac{vb}{\sqrt{1 - v^{2}}},\\
+                    x_{2} &= \dfrac{-vb}{\sqrt{1 - v^{2}}}.
+                \end{aligned}
+                \label{eq:XValuesIntersection}
+            \end{empheq}
+
+            Así, de las \cref{eq:TValuesIntersection,eq:XValuesIntersection}, los puntos de intersección son:
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{align}
+                \zeta &= \left(\dfrac{b}{\sqrt{1 - v^{2}}}, \dfrac{-vb}{\sqrt{1 - v^{2}}}\right),\label{eq:EventD}\\
+                \zeta^{\prime} &= \left(\dfrac{-b}{\sqrt{1 - v^{2}}}, \dfrac{-vb}{\sqrt{1 - v^{2}}}\right)\nonumber.
+            \end{empheq}
+
+            En la \cref{fig:HyperboleTPrimeIntersection} se muestra los eventos en los que se intersectan las \cref{eq:hyperbole} y el eje \(t^{\prime}\).
+
+            \begin{figure}[htb]
+                \centering
+                \includegraphics{intersection.pdf}
+                \caption{Intersección del lugar geométrico de los eventos equidistantes a \(A\) y el eje \(t^{\prime}\), donde los ejes (en sentido de las manecillas del reloj) son \(t^{\prime}\) y \(x^{\prime}\).}
+                \label{fig:HyperboleTPrimeIntersection}
+            \end{figure}
+
+            \pagebreak
             \item Denota a uno de los eventos que encontraste en d) como D. ¿Cuánto vale el intervalo \((\Delta s^{\prime}_{AD})^{2}\) entre \(D\) y \(A\) según \(\primeobserver\)? Recuerda: el intervalo es invariante.
+            
+            \inlinesol
+            
+            Ahora calculamos el intervalo entre los eventos \(D\) (\cref{eq:EventD}) y \(A\).
+
+            \begin{align}
+                (\Delta {s_{AD}}^{\prime})^{2} &= -\left(\dfrac{b}{\sqrt{1 - v^{2}}} - 0\right)^{2} + \left(\dfrac{-vb}{\sqrt{1 - v^{2}}} - 0\right)^{2},\nonumber\\
+                &= -\dfrac{b^{2}}{1 - v^{2}} + \dfrac{v^{2}b^{2}}{1 - v^{2}},\nonumber\\
+                &= \dfrac{-b^{2}}{1 - v^{2}}(1 - v^{2}),\nonumber\\
+                \Acolorboxed{(\Delta {s_{AD}}^{\prime})^{2} &= -b^{2}.}\label{eq:ADInterval}
+            \end{align}
+
+            Notamos entonces de las \cref{eq:IntervalAB,eq:ADInterval},
+
+            \begin{equation*}
+                \boxed{(\Delta s_{AB})^{2} = (\Delta {s_{AD}}^{\prime})^{2}.}
+            \end{equation*}
+
             \item Usa tu resultado de e) para escribir las coordenadas del evento \(D\) en el sistema \(\primeobserver\). Lo que acabas de hacer es escalar los ejes, es decir, has determinado lo que cada observador llama \(b\) metros.
+
+            \inlinesol
+            
+            Puesto que el evento \(D\) se encuentra en el eje \(t^{\prime}\), lo único que necesitamos para escribirlo en coordenadas del sistema \(\primeobserver\) es hacer la coordenada \(x^{\prime} = 0\). Así,
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation}
+                E = \left(\dfrac{b}{\sqrt{1 - v^{2}}}, 0\right).
+                \label{eq:EventE}
+            \end{empheq}
+
             \item Escribe la ecuación del lugar geométrico de todos los eventos \(E\) tales que \((\Delta s^{\prime}_{AD})^{2} = (\Delta s^{\prime}_{AE})^{2}\). ¿Tienen algún parecido con tu respuesta de c)?
+            
+            \inlinesol
+
+            El lugar geométrico para todos los eventos \(E\) está dado por
+
+            \begin{empheq}[box = \color{pinkwave}\fbox]{equation*}
+                -\dfrac{{x_{E}}^{2}}{b^{2}} + \dfrac{{t_{E}}^{2}}{b^{2}} = 1.
+            \end{empheq}
+
+            El parecido tiene que tiene con c) es que son iguales, ya que ambos eventos están sobre el lugar geométrico representado por la hipérbola.
         \end{enumerate}
     \end{exercise}
 \end{document}
