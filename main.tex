@@ -179,7 +179,7 @@
   \setbox\z@\hbox{$\displaystyle#2{}\m@th$\kern\fboxsep \kern\fboxrule}%
   \edef\@tempa{\kern\wd\z@ & \kern-\the\wd\z@ \fboxsep\the\fboxsep \fboxrule\the\fboxrule}%
   \@tempa
-  \fcolorbox{#1}{white}{\m@th$\displaystyle#2#3$}%
+  \fcolorbox{#1}{base3}{\m@th$\displaystyle#2#3$}%
 } 
 \makeatother
 
@@ -489,6 +489,24 @@
             \end{figure}
 
             \item Calcula el intervalo \((\Delta s_{AB})^{2}\) entre \(A\) y \(B\). ¿Qué tipo de separación hay entre estos eventos?
+            
+            Calculamos el intervalo entre los eventos \(A\) y \(B\), tal que,
+
+            \begin{align}
+                (\Delta s_{AB})^{2} &= -(t_{B} - t_{A})^{2} + (x_{B} - x_{A})^{2},\nonumber\\
+                &= -(b - 0)^{2} + (0 - 0)^{2},\nonumber\\
+                \Acolorboxed{(\Delta s_{AB})^{2} &= -b^{2}.}
+                \label{eq:IntervalAB}
+            \end{align}
+
+            De la \cref{eq:IntervalAB}, tenemos que
+
+            \begin{equation*}
+                (\Delta s_{AB})^{2} < 0
+            \end{equation*}
+
+            Por lo tanto, la separación entre los eventos es de tipo \setulcolor{pinkwave}\ul{temporaloide}.
+
             \item Escribe la ecuación del lugar geométrico de todos los eventos \(C\) tales que \((\Delta s_{AC})^{2} = (\Delta s_{AB})^{2}\), esd decir, de todos los eventos que equidistan espacio-temporalmente de \(A\). Pinta este lugar geométrico en el diagrama de \(\observer\) (ambas ramas).
             
             \begin{figure}[htb]
