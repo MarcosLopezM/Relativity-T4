@@ -17,6 +17,7 @@
 \usepackage{lualatex-math} % Fixes for mathematics
 \usepackage{mathtools}
 \usepackage{microtype}
+\usepackage{mismath}
 \usepackage{nicefrac}
 \usepackage[hyperref]{ntheorem}
 % \usepackage{phfqit} % Bra-ket notation
@@ -161,10 +162,10 @@
   }%
 }
 
-\newcommand*{\e}{\mathrm{e}} % exponential
 \newcommand*{\observer}{\mathcal{O}}
 \newcommand*{\primeobserver}{\mathcal{O}^{\prime}}
 \newcommand*{\biprimeobserver}{\mathcal{O}^{\prime\prime}}
+\newcommand*{\triprimeobserver}{\mathcal{O}^{\prime\prime\prime}}
 \newcommand*{\inlinesol}{\vspace*{10pt}\textbf{Solución}\vspace*{10pt}}
 % \newcommand*{\change}[1]{\Delta{#1}\xspace}
 
@@ -289,6 +290,17 @@
             \end{equation*}
 
             que obtuvimos en clase. Sin embargo, son la misma matriz. ¿Qué relación debe haber entre \(\rho\) y \(v\) para que esto ocurra? A \(\rho\) se le conoce con el nombre de \textbf{rapidity}.
+        \end{enumerate}
+    \end{exercise}
+
+    \begin{exercise}
+        Sean \(\observer\) y \(\primeobserver\) dos sistemas inerciales en un espacio-tiempo 2+1-dimensional, tales que \(\primeobserver\) se mueve con velocidad \(\vect{v} = \cos\theta\uvec{x} + \sin\theta\uvec{y}\) respecto a \(\observer\). Los dos sistemas comparte el mismo origen y son tales que sus ejes espaciales están alineados, es decir, no hay una rotación ni una traslación de por medio entre los sistemas \(\observer\) y \(\primeobserver\), la única diferencia entre ambos es su estado de movimiento. En este problema la transformación de Lorentz entre las coordenadas de ambos sistemas. Para esto:
+
+        \begin{enumerate}
+            \item Considera primero un sistema intermedio \(\biprimeobserver\), tal que este se encuentra en reposo respecto a \(\observer\), comparte el mismo origen coordenado, pero la velocidad de \(\primeobserver\) respecto a \(\biprimeobserver\) es \(\vect{v} = v\uvec{x}^{\prime\prime}\). Escribe la transformación de coordenadas para pasar de \(\observer\) a \(\biprimeobserver\) (las tres coordenadas, el tiempo incluido).
+            \item Usa un boost de Lorentz en la dirección \(x^{\prime\prime}\) con la velocidad \(v\) para de \(\biprimeobserver\) a otro sistema intermedio \(\triprimeobserver\). Nota que este nuevo sistema está en reposo respecto a \(\primeobserver\), pero sus ejes espaciales no coinciden debido a la rotación que aplicaste en a) (hacer un dibujo puee ayudarte a visualizar esto).
+            \item Usa ahora una rotación para pasar del sistema \(\triprimeobserver\) a \(\primeobserver\).
+            \item Finalmente, usa tus resultados de todos los incisos anteriores para escribir explícitamente la relación entre las coordenadas de \(\observer\) con las coordenadas de \(\primeobserver\).
         \end{enumerate}
     \end{exercise}
 \end{document}
