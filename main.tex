@@ -22,12 +22,13 @@
 % \usepackage{phfqit} % Bra-ket notation
 % \usepackage{physics}
 \usepackage[final]{showlabels}
-% \usepackage{simples-matrices}
+\usepackage{simples-matrices}
 \usepackage{siunitx}
 \usepackage{soul}
 \usepackage{titling}
 \usepackage{tabularray}
 \usepackage{tasks}
+% \usepackage{tensor}
 \usepackage{xcolor}
 \usepackage{xfrac}
 \usepackage{xparse}
@@ -174,6 +175,13 @@
         \Delta {#3}
     }
 }
+\NewDocumentCommand{\interval}{ s o m }{%
+    \IfBooleanTF{#1}{%
+        (\Delta {#3^{\prime}})^{2}
+    }{%
+        (\Delta {#3})^{2}
+    }
+}
 % \newcommand{\crefrangeconjunction}{--}
 % \newcommand{\crefpairconjunction}{\xspace y\xspace}
 
@@ -232,15 +240,55 @@
 
         La expresión (con el factor de \(c\) restituido) a la que llegamos en clase es
 
-        \begin{equation}
+        \begin{equation*}
             \change{t} = \dfrac{\change*{t}}{\sqrt{1 - \frac{v^{2}}{v^{2}}}},
-        \end{equation}
+        \end{equation*}
 
         donde el sistema \(\observer\) corresponde a un observador en Ciudad Central, \(\primeobserver\) corresponde a Flash.
 
         \begin{enumerate}[label = \alph*)]
             \item Calcula la velocidad \(v\) con la que Flash corrió hacia el banco según \(\observer\) (mucho cuidado con los decimales).
             \item Si Flash hubiera viaja a \(v = 0.9c\), ¿cuánto tiempo habría tardado en llegar al banco según \(\observer\)? Supón que para Flash aún pasaron solo 30 segundos. La respuesta a este problema debe darte una idea de las velocidades necesarias para que los efectos relativistas sean perceptibles.
+        \end{enumerate}
+    \end{exercise}
+
+    \begin{exercise}
+        En este problema estudiarás una forma para deducir las transformaciones de Lorentz alternativa a la que dimos en clase. Considera un espacio-tiempo 1+1-dimensional y dos observadores en éste, \(\observer\) y \(\primeobserver\), tales que el segundo se mueve con velocidad \(v\) respecto al primero y sus orígenes coinciden. Nota primero que podemos escribir al intervalo entre dos eventos cualesquiera en notación matricial
+        
+        \begin{equation}
+            \interval{s} =
+                        \matrice[2]{\change{t}, \change{x}}
+                        \matrice[2]{-1, 0, 0, 1}
+                        \matrice[1]{\change{t}, \change{x}}.
+            \label{eq:STInterval}
+        \end{equation}
+
+        La matriz que aparece en esa expresión
+
+        \begin{equation*}
+            \eta =
+                \matrice[2]{-1, 0, 0, 1}
+        \end{equation*}
+
+        es muy importante. De hecho, lo que harás es definir a las transformaciones de Lorentz haciendo referencia a esta matriz y no al intervalo en sí.
+
+        \begin{enumerate}[label = \alph*)]
+            \item Escribe la transformación lineal entre los sistemas \(\observer\) y \(\primeobserver\) en forma matricial. Vas a deducir las entradas de dicha matriz \(\Lambda\) en este problema, así que por ahora usa las letras que gustes como incógnitas. 
+            \item Escribe la relación entre \((\change{t}, \change{x})\) y \((\change*{t}, \change*{x})\) de forma matricial usando a).
+            \item Usa (\ref{eq:STInterval}) para escribir una invariancia del intervalo \(\interval{s} = \interval*{s}\) en forma matricial. Luego usa b) para escribir todo en términos de \((\change{t}, \change{x})\).
+            \item Dado que tu expresión de c) debe ser válida para cualquier \((\change{t}, \change{x})\), ¿qué relación deben cumplir \(\eta\) y \(\Lambda\)? Se dice entonces que \(\Lambda\) preserva a la matriz \(\eta\).
+            \item Resuelve la expresión que encontraste en d), es decir, resuelve el sistema de ecuaciones para determinar todas las entradas de la matriz de transformación \(\Lambda\). Tu resultado debe quedar expresado en términos de un solo parámetro libre \(\rho\). Notarás que hay dos tipos de soluciones, las que queremos en este problema es la que tiene determinante positivo. \emph{Hint}: ¿Qué relación cumplen \(\sinh(\rho)\) y \(\cos(\rho)\) para cualquier \(\rho\)?
+            \item La matriz \(\Lambda\) a la que llegaste luce algo diferente a la matriz
+            
+            \begin{equation*}
+                \Lambda =
+                        \matrice[2]{\frac{1}{\sqrt{1 - v^{2}}},
+                                    -\frac{v}{\sqrt{1 - v^{2}}},
+                                    -\frac{v}{\sqrt{1 - v^{2}}},
+                                    \frac{1}{\sqrt{1 - v^{2}}}}
+            \end{equation*}
+
+            que obtuvimos en clase. Sin embargo, son la misma matriz. ¿Qué relación debe haber entre \(\rho\) y \(v\) para que esto ocurra? A \(\rho\) se le conoce con el nombre de \textbf{rapidity}.
         \end{enumerate}
     \end{exercise}
 \end{document}
