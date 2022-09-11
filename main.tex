@@ -4,7 +4,7 @@
 \usepackage[export]{adjustbox}
 \usepackage{amsfonts, amsmath, amssymb}
 \usepackage{bm}
-\usepackage{breqn}
+% \usepackage{breqn}
 \usepackage{derivative}
 \usepackage{empheq}
 \usepackage[inline]{enumitem}
@@ -29,7 +29,7 @@
 \usepackage{titling}
 \usepackage{tabularray}
 \usepackage{tasks}
-% \usepackage{tensor}
+\usepackage{tensor}
 \usepackage{xcolor}
 \usepackage{xfrac}
 \usepackage{xparse}
@@ -235,10 +235,26 @@
     \thispagestyle{fancy}
     
     \begin{exercise}
-        \begin{enumerate}
+        \begin{enumerate}[label = \alph*)]
             \item Considera un observador inercial dentro de un elevador estático sobre una superficie carga infinita, de forma tal que hay un campo eléctrico constante \(\vect{E} = -E \uvec{z}\) en todo el espacio. No hay ningún otro tipo de campo gravitacional en el espacio. El observador deja caer dos partículas desde la misma altura: la primera tiene carga eléctrica \(q\) y masa \(m\), mientras que la segunda tiene carga \(q\) y masa \(M\), tal que \(M > m\). ¿Cuál de las dos partículas llega primero al suelo del elevador según el observador dentro? La interacción eléctrica y gravitacional entre ambas partículas es despreciable.
             \item Considera un observador inercial dentro de un elevador estático sobre una superficie infinita, de forma tal que ésta genera un campo gravitacional constante \(\vect{G} = -g\uvec{z}\) en todo el espacio. No hay ningún tipo de campo electromagnético en el espacio. El observador deja caer dos partículas desde la misma altura: la primera tienen carga eléctrica \(q\) y masa \(m\), mientras que la segunda tiene carga \(q\) y masa \(M\), tal que \(M > m\). ¿Cuál de las dos partículas llega primero al suelo del elevador según el observador dentro? La interacción eléctrica y gravitacional entre ambas partículas es despreciable.
             \item Considera un observador no inercial dentro de un elevador que se mueve en el espacio con aceleración constante \(\vect{a} = a\uvec{z}\) respecto a otro sistema inercial externo al elevador. No hay ningún campo gravitacional ni electromagnético en el espacio. El observador no inercial en el elevador deja caer dos partículas desde la misma altura: la primera tiene carga eléctrica \(q\) y masa \(m\), mientras que la segunda tiene carga \(q\) y masa \(M\), tal que \(M > m\). ¿Cuál de las dos partículas llega primero al suelo del elevador según el observador dentro? La interacción eléctrica y gravitacional entre ambas partículas es despreciable.
+        \end{enumerate}
+    \end{exercise}
+
+    \begin{exercise}
+        \begin{enumerate}
+            \item De acuerdo a la Relatividad General, ¿qué tipo de trayectoria en el espacio-tiempo sigue un cuerpo libre de fuerzas? En palabras simples, explica la definición de ese tipo de trayectoria y da un ejemplo sencillo. No necesitas mayor formalidad matemática que la que seguimos en clase.
+            \item Enuncia los dos tipos de curvatura que hay y cuáles son las diferencias entre ambas. No necesitas mayor formalidad matemática que la que seguimos en clase. ¿A qué tipo de curvatura hace referencia el enunciado ``la gravedad está codificada en la curvatura del espacio-tiempo''?
+            % La respuesta a la pregunta anterior es que la curvatura del espacio-tiempo es intrínseca, ya que por definición (o convención), no hay un espacio de mayor dimensionalidad que el espacio-tiempo que conocemos.
+            \item Las ecuaciones de Einstein son
+            
+            \begin{equation}
+                \tensor{R}{_{\mu\nu}} - \dfrac{1}{2}\tensor{g}{_{\mu\nu}}R = 8\pi\tensor{T}{_{\mu\nu}}. 
+                \label{eq:EinsteinEqs}
+            \end{equation}
+
+            ¿En qué consiste encontrar una solución a éstas? Es decir, qué objetos necesitan darse como información y para qué objeto se resuelve.
         \end{enumerate}
     \end{exercise}
 \end{document}
