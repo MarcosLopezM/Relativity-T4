@@ -237,6 +237,48 @@
     \begin{exercise}
         \begin{enumerate}[label = \alph*)]
             \item Considera un observador inercial dentro de un elevador estático sobre una superficie carga infinita, de forma tal que hay un campo eléctrico constante \(\vect{E} = -E \uvec{z}\) en todo el espacio. No hay ningún otro tipo de campo gravitacional en el espacio. El observador deja caer dos partículas desde la misma altura: la primera tiene carga eléctrica \(q\) y masa \(m\), mientras que la segunda tiene carga \(q\) y masa \(M\), tal que \(M > m\). ¿Cuál de las dos partículas llega primero al suelo del elevador según el observador dentro? La interacción eléctrica y gravitacional entre ambas partículas es despreciable.
+
+            \inlinesol
+
+            Sabemos la fuerza que actúa sobre una partícula en presencia de un campo eléctrico constante está dada como:
+
+            \begin{equation}
+                F = qE.
+                \label{eq:FInEcte}
+            \end{equation}
+
+            Notemos que la fuerza debida al campo eléctrico que actúa sobre cada partícula es la misma, ya que su carga es la misma.
+
+            Por otro lado, por la segunda ley de Newton, 
+
+            \begin{align}
+                F &= ma_{1},\label{eq:NewtonFParticlem}\\
+                F &= ma_{2}.\label{eq:NewtonFParticleM}
+            \end{align}
+            
+            Igualando \cref{eq:FInEcte} con las \cref{eq:NewtonFParticlem,eq:NewtonFParticleM},
+
+            \begin{align*}
+                qE &= ma_{1},\\
+                qE &= Ma_{2}.
+            \end{align*}
+
+            De esta manera, de las expresiones anteriores tenemos que
+
+            \begin{align*}
+                ma_{1} &= Ma_{2},\\
+                \dfrac{a_{1}}{a_{2}} &= \dfrac{M}{m}.
+            \end{align*}
+
+            Por hipótesis sabemos que \(M > m\), entonces
+
+            \begin{align*}
+                \dfrac{a_{1}}{a_{2}} &> 1,\\
+                \Rightarrow a_{1} &> a_{2}. 
+            \end{align*}
+
+            Por lo tanto, la partícula con masa \(m\) llega primero al suelo del elevador.
+
             \item Considera un observador inercial dentro de un elevador estático sobre una superficie infinita, de forma tal que ésta genera un campo gravitacional constante \(\vect{G} = -g\uvec{z}\) en todo el espacio. No hay ningún tipo de campo electromagnético en el espacio. El observador deja caer dos partículas desde la misma altura: la primera tienen carga eléctrica \(q\) y masa \(m\), mientras que la segunda tiene carga \(q\) y masa \(M\), tal que \(M > m\). ¿Cuál de las dos partículas llega primero al suelo del elevador según el observador dentro? La interacción eléctrica y gravitacional entre ambas partículas es despreciable.
             \item Considera un observador no inercial dentro de un elevador que se mueve en el espacio con aceleración constante \(\vect{a} = a\uvec{z}\) respecto a otro sistema inercial externo al elevador. No hay ningún campo gravitacional ni electromagnético en el espacio. El observador no inercial en el elevador deja caer dos partículas desde la misma altura: la primera tiene carga eléctrica \(q\) y masa \(m\), mientras que la segunda tiene carga \(q\) y masa \(M\), tal que \(M > m\). ¿Cuál de las dos partículas llega primero al suelo del elevador según el observador dentro? La interacción eléctrica y gravitacional entre ambas partículas es despreciable.
         \end{enumerate}
@@ -249,9 +291,9 @@
             
             \inlinesol
 
-            El tipo de trayectoria que sigue un cuerpo libre de fuerzas en el espacio-tiempo es una \setulcolor{pinkwave}\ul{\textbf{geodésica}}.\par
+            El tipo de trayectoria que sigue un cuerpo libre de fuerzas en el espacio-tiempo es una \setulcolor{pinkwave}\ul{\textbf{geodésica espacio-temporal}}.\par
 
-            Una \textbf{geodésica} es la trayectoria más recta posible en un cierto espacio. Un ejemplo serían las líneas rectas, que son las geodésicas del plano euclidiano.
+            Una \textbf{geodésica}, en general, es la trayectoria más recta posible en un cierto espacio. Un ejemplo serían las líneas rectas, que son las geodésicas del plano euclidiano.
 
             \item Enuncia los dos tipos de curvatura que hay y cuáles son las diferencias entre ambas. No necesitas mayor formalidad matemática que la que seguimos en clase. ¿A qué tipo de curvatura hace referencia el enunciado ``la gravedad está codificada en la curvatura del espacio-tiempo''?
             
